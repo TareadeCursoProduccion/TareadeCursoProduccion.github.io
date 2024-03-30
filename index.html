@@ -8,11 +8,38 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom, #f7a7c0, #9cd9ed);
         }
+
+        h1
+        {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        #square {
+    background-color: #ffffff56;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 20px;
+    width: 200;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    backdrop-filter: blur(5px); 
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); 
+
+}
+
         .button {
             display: inline-block;
-            background-color: #4CAF50;
-            color: white;
+            background-color: #ffffff90;
+            color: rgb(0, 0, 0);
             padding: 10px 20px;
             text-align: center;
             text-decoration: none;
@@ -21,17 +48,37 @@
             cursor: pointer;
             border: none;
             border-radius: 5px;
+            backdrop-filter: blur();
         }
         .button:hover {
-            background-color: #45a049;
+            background-color: #00000090;
+            color: rgb(255, 255, 255);
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            backdrop-filter: blur();
         }
+
+        @media screen and (max-width: 600px) {
+ 
+  #square {
+    width: 350px;
+    margin-right: 0; 
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  }
+}
     </style>
 </head>
 <body>
+    <div id = "square"> 
     <h1>Administracion de Inventario</h1>
 
     <a href="CMCorrectivo.html" class="button">Costo de Mantenimiento Correctivo</a>
     <a href="eoq.html" class="button">EOQ</a>
-    <a href="control_inventario.html" class="button">Control de Inventario y la Cadena de Suministro</a>
+    <a href="ControlInventario.html" class="button">Control de Inventario y la Cadena de Suministro</a>
+</div>
 </body>
 </html>

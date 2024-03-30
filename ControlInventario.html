@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Mantenimiento Correctivo</title>
+    <link rel="stylesheet" href="ControlInventario.css">
 </head>
 <body>
 
+    <div id="square1">
     <h1>Calculadora de Control de inventario y cadena de suministros</h1>
     
     <form id="maintenanceForm">
-        
         
         <div>
             <select id="cppOption" onchange="toggleMTBFInput()">
@@ -23,7 +24,7 @@
 
             <div>
                 <span>Demanda Anual (D):</span>
-                <input type="number" class="" id="demandaAnual" >
+                <input type="number" class="" id="demandaAnual">
             </div>
 
             <div>
@@ -57,8 +58,8 @@
 
         <button type="submit">Calcular</button>
     </form>
-    <div id="result"></div>
-    
-    <script src="JS/ControlInventario.js"></script>
+</div>
+    <div id="square"></div>
+    <script src = ControlInventario.js></script>
 </body>
 </html>
