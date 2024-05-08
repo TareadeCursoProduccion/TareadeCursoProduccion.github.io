@@ -1,84 +1,97 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Índice de Métodos de Cálculo</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background: linear-gradient(to bottom, #f7a7c0, #9cd9ed);
-        }
-
-        h1
-        {
-            margin-left: 20px;
-            margin-right: 20px;
-        }
-        #square {
-    background-color: #ffffff56;
-    border-radius: 10px;
-    padding: 10px;
-    margin-right: 20px;
-    width: 200;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    backdrop-filter: blur(5px); 
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); 
-
-}
-
-        .button {
-            display: inline-block;
-            background-color: #ffffff90;
-            color: rgb(0, 0, 0);
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            font-size: 16px;
-            margin: 10px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            backdrop-filter: blur();
-        }
-        .button:hover {
-            background-color: #00000090;
-            color: rgb(255, 255, 255);
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            backdrop-filter: blur();
-        }
-
-        @media screen and (max-width: 600px) {
- 
-  #square {
-    width: 350px;
-    margin-right: 0; 
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-  }
-}
-    </style>
-</head>
+<html>
+    <head>
+        <title>Pagina Principal</title>
+    </head>
 <body>
-    <div id = "square"> 
-    <h1>Administracion de Inventario</h1>
+    <nav class="navbar" id="navbar">
+        <img src="assets/image0.png" with="50px" height="50px">
+        <h2>Mini-Markett</h2>
+        
+            <div>
+                <div class="img">imagendeperfil</div>
+                <div class="name">Mi perfil</div>
+                <img src="" alt="">
+            </div>
+            <div>
+                <ul>
+                    <li class="nav__items">
+                        <a href="Login.html" class="nav__links">
+                            <img src="" alt="">
+                            <span class="title iniciarSesion">Iniciar Sesion</span>
+                        </a>
+                    </li>
+                    <li class="nav__items">
+                        <a href="Register.html" class="nav__links">
+                            <img src="" alt="">
+                            <span class="title Registrarse">Registrarse</span>
+                        </a>
+                    </li>
+                    <li class="nav__items">
+                        <a href="#" class="nav__links">
+                            <img src="" alt="">
+                            <span class="title QuienesSomos">Quienes Somos</span>
+                        </a>
+                    </li>
+                    <li class="nav__items">
+                        <a href="AboutUs.html" class="nav__links">
+                            <img src="" alt="">
+                            <span class="title MisionVision">Mision y Vision</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    <nav>
+    <div align="center">
+        <a href="pagina1.html" style="display: inline-block; padding: 10px;">Alimentos</a>
+        <a href="pagina2.html" style="display: inline-block; padding: 10px;">Bebidas</a>
+        <a href="pagina3.html" style="display: inline-block; padding: 10px;">Embutidos</a>
+        <a href="pagina4.html" style="display: inline-block; padding: 10px;">Higiene</a>
+        <a href="pagina4.html" style="display: inline-block; padding: 10px;">Limpieza</a>
+        <a href="pagina4.html" style="display: inline-block; padding: 10px;">Utiles</a>
+    </div> 
+    <input align ="center" type="text" id="busqueda" name="busqueda" size="80">
+    <br>
+    <div align = center>
+        <h1>PROMOCIONES</h1>
+    </div>
+    <div align = center>
+    <div>
+        <div align = left>
+            <img src="assets/proudco2.jpg" width="250" height="300" alt="Producto 1">
+            <h2>Nombre del Producto 1</h2>
+            <p>Descripción del Producto 1</p>
+            <h3>Precio: C$100.00</h3>
+            <button type="button">Agregar a la Cesta</button>
+        </div>
+        <div align = left>
+            <img src="assets/producto 3.png" width="250" height="300" alt="Producto 1">
+            <h2>Nombre del Producto 2</h2>
+            <p>Descripción del Producto 2</p>
+            <h3>Precio: C$100.00</h3>
+            <button type="button">Agregar a la Cesta</button>
+        </div>
+        <div align="left">
+            <img src="ruta_de_la_imagen1.jpg" width="100" height="100" alt="Producto 1">
+            <h2>Nombre del Producto 3</h2>
+            <p>Descripción del Producto 3</p>
+            <h3>Precio: C$100.00</h3>
+            <button type="button">Agregar a la Cesta</button>
+        </div>               
+    </div>   
+    </div>
+    </div>
 
-    <a href="CMCorrectivo.html" class="button">Costo de Mantenimiento Correctivo</a>
-    <a href="eoq.html" class="button">EOQ</a>
-    <a href="ControlInventario.html" class="button">Control de Inventario y la Cadena de Suministro</a>
-</div>
+
+    <a href="inventario.html">
+        <button type="button">Inventario</button>
+    </a>
+
+    <a href="DetallePago.html">
+        <button type="button">DetallePago</button>
+    </a>
+ 
 </body>
+
 </html>

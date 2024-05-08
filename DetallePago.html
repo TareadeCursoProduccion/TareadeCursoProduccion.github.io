@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <img src="assets/flecha.png" with="50px" height="50px" onclick="window.location.href='index.html'" style="cursor: pointer;">
+        <!-- flecha apuntando para atras -->
+        <img src="assets/image0.png" with="50px" height="50px">
+        <h2>Descripcion del Pedido</h2>
+
+        <img src="assets/check.png" with="50px" height="50px">
+        <span>Informacion - - - - 2 Detalle de Pago </span>
+        <span style="color: gray;">- - - - 3 Completar Orden</span>
+    </nav>
+
+    <div class="Main">
+        <div>
+            <h3>Resumen de Orden</h3>
+            <span>Verifique su artículo y seleccione su envío para una mejor experiencia al ordenar el producto</span>
+            <div>
+                <div></div>
+            </div>
+        </div>
+
+        <div>
+            <h3>Detalle de Pago</h3>
+            <span>Complete su artículo de compra proporcionando su orden de detalles de pago</span>
+            <section class="detail container">
+                <div class="detail-email">
+                    <h3>Email</h3>
+                    <input data-type="name" type="text" id="emailInput" class="account-details" autocomplete="off" spellcheck="false" dir="auto">
+                </div>
+                <div class="detail-cardNumber">
+                    <h3>Numero de Tarjeta</h3>
+                    <input data-type="name" type="text" id="cardNumberInput" class="account-details" autocomplete="off" spellcheck="false" dir="auto">
+                </div>
+                <div class="detail-exp">
+                    <h3>Día de expiración</h3>
+                    <input data-type="name" type="text" id="expInput" class="account-details" autocomplete="off" spellcheck="false" dir="auto">
+                </div>
+                <div class="detail-cvv">
+                    <h3>CVV</h3>
+                    <input data-type="name" type="text" id="cvvInput" class="account-details" autocomplete="off" spellcheck="false" dir="auto">
+                </div>
+                <div class="detail-direccionEnvio">
+                    <h3>Direccion de Envio</h3>
+                    <input data-type="name" type="text" id="direccionEnvioInput" class="account-details" autocomplete="off" spellcheck="false" dir="auto">
+                </div>
+
+                <div>
+                    <div>
+                        <p>SubTotal</p>
+                        <p>$???</p>
+                    </div>
+                    <div>
+                        <p>IVA(15%)</p>
+                        <p>$???</p>
+                    </div>
+                    <div>
+                        <p>Total</p>
+                        <p>$???</p>
+                    </div>
+                </div>
+            </section>
+            <button class="btn-RealizarPago">Realizar Pago</button>
+        </div>
+    </div>
+</body>
+</html>
