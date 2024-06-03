@@ -2,21 +2,99 @@
 <html>
     <head>
         <title>Pagina Principal</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="CSS/footer.css">
     </head>
 <body>
-    <!-- Botón para abrir la ventana emergente -->
-    <a href="#ventanaInicioSesion">Iniciar Sesión</a>
+    <div class="absolute top-[30px] right-[30px]">
+        <button onclick="window.location.href='index.html'">
+            <svg class="w-[50px] h-[50px]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        </button>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 lg:w-full" style="@media (min-width: 1024px) {grid-template-columns: 30% 70%;}"> 
+        <div class="bg-[#DF8D10] text-white p-8 text-center m-auto absolute w-full h-[300px] bottom-0 lg:static lg:w-full lg:h-full">
+            <p class="text-5xl font-bold mb-4 lg:mt-[240px]">Tú conveniencia</p>
+            <p class="text-5xl lg:mt-[2rem]">¡nuestra prioridad!</p>
+        </div>
 
-    <!-- Ventana emergente -->
+        <div class="bg-white p-8 mt-8">
+            <div class="flex justify-center mb-4 mt-[4rem]">
+                <img 
+                src="assets/image0.png"
+                alt="icon"
+                class="w-[250px] h-[250px] lg:w-[150px] lg:h-[150px]">
+            </div>
+            <form action="#" method="post" class="space-y-4">
+                <div class="flex justify-center mb-4 mt-[4rem]">
+                    <label for="usuario" class="sr-only">Usuario</label>
+                    <input type="text" id="usuario" name="usuario" placeholder="Usuario" required
+                    class=" px-[10rem] py-2 border rounded-lg  text-slate-700 ring-slate-700 focus:outline-none focus:ring-2 focus:ring-orange-600">
+                </div>
+                <div class="flex justify-center mb-4 mt-[4rem]">
+                    <label for="contrasena" class="sr-only">Contraseña</label>
+                    <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required
+                    class=" px-[10rem] py-2 border rounded-lg text-slate-700 ring-slate-700 focus:outline-none focus:ring-2 focus:ring-orange-600">
+                </div>
+                <div class="flex justify-center mb-4 mt-[4rem]">
+                <button type="submit" class="bg-[#FFD589] text-black px-4 py-2 rounded-lg font-bold flex items-center justify-center">
+                    <span class="mr-2">+</span> Iniciar sesión <span class="mr-2">+</span>
+                </button>
+                </div>
+                <div class="text-center">
+                    <p>¿No tienes una cuenta? <a href="Register.html" class="text-blue-500 font-bold hover:underline"> Registrate</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2">
+        <div class="bg-[#DF8D10] h-[148.5px]"></div>
+        <div></div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+               
+                <p style = "font-size: 37px;"><strong>Mini-Markett</strong></p>
+                <p>Tú conveniencia ¡nuestra prioridad!</p>
+            </div>
+            <div class="footer-section">
+                <p><a href="quienes somos.html">¿Quiénes somos?</a></p>
+                <p><a href="AboutUs.html">Misión y visión</a></p>
+            </div>
+            <div class="footer-section">
+                <p><strong>Contacto</strong></p>
+                <p>(+505) 5816 0546</p>
+                <p>minimarkett@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Mini-Markett. Todos los derechos reservados.</p>
+            <p><a href="PoliticasPrivacidad.html">Políticas de privacidad</a> | <a href="PoliticasSeguridad.html">Políticas de seguridad</a></p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+<!-- <a href="#ventanaInicioSesion">Iniciar Sesión</a> -->
+
+<!-- <div class=" grid grid-cols-2">
+    <div class="mr-[100px]">
+        <p>
+            Tu conveniencia 
+            nuestra prioridad
+        </p>
+    </div>
     <div id="ventanaInicioSesion">
         <form action="#" method="post">
+            <img src="assets/image0.png" alt="icon">
             <label for="usuario">Usuario:</label>
             <input type="text" id="usuario" name="usuario" required><br>
             <label for="contrasena">Contraseña:</label>
             <input type="password" id="contrasena" name="contrasena" required><br>
             <button type="submit">Iniciar Sesión</button>
+            <a href="#ventanaInicioSesion">No tienes una cuenta? *Registrate*</a>
         </form>
     </div>
-    
-</body>
-</html>
+</div>
+<button><img src="" alt="x"></button> -->

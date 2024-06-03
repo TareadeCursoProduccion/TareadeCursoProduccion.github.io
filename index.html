@@ -1,97 +1,123 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Pagina Principal</title>
-    </head>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Markett</title>
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <script src="JS/index.js"></script>
+</head>
 <body>
-    <nav class="navbar" id="navbar">
-        <img src="assets/image0.png" with="50px" height="50px">
-        <h2>Mini-Markett</h2>
+    <header>
+        <div class="logo">
+            <img src="assets/image0.png" alt="Mini-Markett Logo">
+            <h1>Mini-Markett</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="¿Que estas buscando?">
+        </div>
+        <div class="dropdown">
+            <button class="profile-button">Mi Perfil</button>
+            <div class="dropdown-options">
+              <a href="Login.html">Iniciar Sesion</a>
+              <a href="Register.html">Registrarse</a>
+              <a href="#">Cerrar Sesion</a>
+            </div>
+          </div>
+        <div>
+            <button class="round-button2" >
+                <a href="CestaDeCompra.html"><img style="width: 40px; height: 40px; margin-top: 5px; margin-left: px; " src="assets/cesta icon.png" alt="alimentos"></a>
+                
+            </button >   
+        </div>
+
+    </header>
+    <div class="categories-container" align="center" >
         
-            <div>
-                <div class="img">imagendeperfil</div>
-                <div class="name">Mi perfil</div>
-                <img src="" alt="">
+        
+            <button class="round-button">
+                <img style="width: 60px; height: 60px; margin-top: 5px; margin-left: px;"  src="assets/Alimentos icon.png" alt="alimentos">
+                
+            </button>   
+            <button class="round-button">
+                <img style="width: 60px; height: 65px; margin-top: 5px; margin-left: px;"  src="assets/Bebidas icon.png" alt="bebidas">
+            </button> 
+            <button class="round-button">
+                <img style="width: 60px; height: 60px; margin-top: 5px; margin-left: px;"  src="assets/Embutidos icon.png" alt="embutidos">
+            </button> 
+            <button class="round-button">
+                <img style="width: 50px; height: 70px; margin-top: 5px; margin-left: px;"  src="assets/Helados icon.png" alt="helados">
+            </button> 
+            <button class="round-button">
+                <img style="width: 60px; height: 60px; margin-top: 0px; margin-left: px;"  src="assets/higiene icon.png" alt="higiene">
+            </button> 
+            <button class="round-button">
+                <img style="width: 55px; height: 60px; margin-top: 0px; margin-left: px;"  src="assets/lacteos icon.png" alt="lacteos">
+            </button> 
+            <button class="round-button">
+                <img style="width: 50px; height: 65px; margin-top: 5px; margin-left: px;"  src="assets/limpieza icon.png" alt="limpieza">
+            </button> 
+        </div>
+          
+        
+        
+    <main>
+        <h2 class="main-text">PROMOCIONES</h2>
+        <div class="promociones">
+            <div class="promo-item">
+                <img src="assets/proudco2.jpg" style="width: 190px; height: 240px;" alt="Coca-Cola Zero">
+                <p><strong>Coca-Cola Zero 2.5L (2 Pack)</strong></p>
+                <p>¡Duplica el sabor sin las calorías con nuestro pack especial de 2 botellas de 2.5 litros de Coca-Cola Zero!</p>
+                <p><strong>C$90.00</strong></p>
+                <button>Añadir al carrito</button>
             </div>
-            <div>
-                <ul>
-                    <li class="nav__items">
-                        <a href="Login.html" class="nav__links">
-                            <img src="" alt="">
-                            <span class="title iniciarSesion">Iniciar Sesion</span>
-                        </a>
-                    </li>
-                    <li class="nav__items">
-                        <a href="Register.html" class="nav__links">
-                            <img src="" alt="">
-                            <span class="title Registrarse">Registrarse</span>
-                        </a>
-                    </li>
-                    <li class="nav__items">
-                        <a href="#" class="nav__links">
-                            <img src="" alt="">
-                            <span class="title QuienesSomos">Quienes Somos</span>
-                        </a>
-                    </li>
-                    <li class="nav__items">
-                        <a href="AboutUs.html" class="nav__links">
-                            <img src="" alt="">
-                            <span class="title MisionVision">Mision y Vision</span>
-                        </a>
-                    </li>
-                </ul>
+            <div class="promo-item">
+                <img src="assets/image 1.png" alt="Jumex Variedad Frutas" style="width: 190px; height: 240px;">
+                <p><strong>Jumex Variedad Frutas (2x1)</strong></p>
+                <p>Aprovecha nuestra promoción 2x1 en Jumex variedad frutas y lleva el doble de sabor refrescante a casa con cada botella!</p>
+                <p><strong>C$60.00</strong></p>
+                <button>Añadir al carrito</button>
+            </div>
+            <div class="promo-item">
+                <img src="assets/producto 3.png" alt="Cereales Kellogg's" style="width: 190px; height: 240px;">
+                <p><strong>Cereales Kellogg's (3x2)</strong></p>
+                <p>¡Desayuna con más variedad y ahorro con nuestra oferta especial 3x2 en cereales Kellogg's!</p>
+                <p><strong>C$850.00</strong></p>
+                <button>Añadir al carrito</button>
+            </div>
+            <div class="promo-item">
+                <img src="assets/image 3.png" alt="Helado Cremissimo" style="width: 190px; height: 240px;">
+                <p><strong>Helado Cremissimo 1L (Todos los sabores) + ¡Regalo! Palomitas ACT II 80g</strong></p>
+                <p>Satisfacción en cada bocado! Helado Cremissimo 1L + Palomitas ACT II 80g de cortesía para una experiencia de sabor incomparable.</p>
+                <p><strong>C$190.00</strong></p>
+                <button>Añadir al carrito</button>
             </div>
         </div>
-    <nav>
-    <div align="center">
-        <a href="pagina1.html" style="display: inline-block; padding: 10px;">Alimentos</a>
-        <a href="pagina2.html" style="display: inline-block; padding: 10px;">Bebidas</a>
-        <a href="pagina3.html" style="display: inline-block; padding: 10px;">Embutidos</a>
-        <a href="pagina4.html" style="display: inline-block; padding: 10px;">Higiene</a>
-        <a href="pagina4.html" style="display: inline-block; padding: 10px;">Limpieza</a>
-        <a href="pagina4.html" style="display: inline-block; padding: 10px;">Utiles</a>
-    </div> 
-    <input align ="center" type="text" id="busqueda" name="busqueda" size="80">
-    <br>
-    <div align = center>
-        <h1>PROMOCIONES</h1>
-    </div>
-    <div align = center>
-    <div>
-        <div align = left>
-            <img src="assets/proudco2.jpg" width="250" height="300" alt="Producto 1">
-            <h2>Nombre del Producto 1</h2>
-            <p>Descripción del Producto 1</p>
-            <h3>Precio: C$100.00</h3>
-            <button type="button">Agregar a la Cesta</button>
-        </div>
-        <div align = left>
-            <img src="assets/producto 3.png" width="250" height="300" alt="Producto 1">
-            <h2>Nombre del Producto 2</h2>
-            <p>Descripción del Producto 2</p>
-            <h3>Precio: C$100.00</h3>
-            <button type="button">Agregar a la Cesta</button>
-        </div>
-        <div align="left">
-            <img src="ruta_de_la_imagen1.jpg" width="100" height="100" alt="Producto 1">
-            <h2>Nombre del Producto 3</h2>
-            <p>Descripción del Producto 3</p>
-            <h3>Precio: C$100.00</h3>
-            <button type="button">Agregar a la Cesta</button>
-        </div>               
-    </div>   
-    </div>
-    </div>
-
-
-    <a href="inventario.html">
-        <button type="button">Inventario</button>
-    </a>
-
-    <a href="DetallePago.html">
-        <button type="button">DetallePago</button>
-    </a>
- 
+        <a href="CestaDeCompra.html">Cesta</a>
+        <a href="inventario.html">Inventario</a>
+    </main>
 </body>
-
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+           
+            <p style = "font-size: 37px;"><strong>Mini-Markett</strong></p>
+            <p>Tú conveniencia ¡nuestra prioridad!</p>
+        </div>
+        <div class="footer-section">
+            <p><a href="quienes somos.html">¿Quiénes somos?</a></p>
+            <p><a href="AboutUs.html">Misión y visión</a></p>
+        </div>
+        <div class="footer-section">
+            <p><strong>Contacto</strong></p>
+            <p>(+505) 5816 0546</p>
+            <p>minimarkett@gmail.com</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2024 Mini-Markett. Todos los derechos reservados.</p>
+        <p><a href="PoliticasPrivacidad.html">Políticas de privacidad</a> | <a href="PoliticasSeguridad.html">Políticas de seguridad</a></p>
+    </div>
+</footer>
 </html>
