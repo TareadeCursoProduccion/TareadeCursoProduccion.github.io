@@ -12,7 +12,7 @@
 <body>
     <form class="form">
         <div class="absolute top-[30px] right-[30px]">
-            <button onclick="window.location.href='index.html'">
+            <button type="button" onclick="window.location.href='index.html'">
                 <svg class="w-[50px] h-[50px]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
             </button>
         </div>
@@ -20,27 +20,28 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 ml-[70px] mb-[193px]">
             <div>
                 <label for="nombre">Tu nombre</label>
-        <div class="input-group">
-            <input type="text" id="nombre" placeholder="Nombres" required>
-            <input type="text" placeholder="Apellidos" required>
-        </div>
-        <label for="email">Correo electrónico</label>
-        <input type="email" id="email" placeholder="example@gmail.com" required>
-        <label for="usuario">Usuario</label>
-        <input type="text" id="usuario" placeholder="Username378" required>
-        <label for="password">Contraseña</label>
-        <input type="password" id="password" placeholder="•••••••••" required>
-        <div class="flex justify-center mb-4 mt-[2rem]">
-            <button class="bg-[#FFD589] text-black px-4 py-2 rounded-lg font-bold flex items-center justify-center" type="submit">Crear Cuenta</button>
-        </div>
-        <p class="p">¿Tienes una cuenta creada? <a href="Login.html">Inicia sesión</a></p>
+                <div class="input-group">
+                    <input type="text" id="nombre" placeholder="Nombres" required>
+                    <input type="text" placeholder="Apellidos" required>
+                </div>
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" placeholder="example@gmail.com" required>
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" placeholder="Username378" required>
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" placeholder="•••••••••" required>
+                <div class="flex justify-center mb-4 mt-[2rem]">
+                    <button class="bg-[#FFD589] text-black px-4 py-2 rounded-lg font-bold flex items-center justify-center" type="submit">Crear Cuenta</button>
+                </div>
+                <p class="p">¿Tienes una cuenta creada? <a href="Login.html">Inicia sesión</a></p>
             </div>
+        
             <div class="grid grid-cols-1 justify-center items-center">
                 <div class="flex justify-center items-center">
-                    <img 
-                src="assets/Image placeholder.png"
-                alt="icon"
-                class="w-[250px] h-[250px] lg:w-[150px] lg:h-[150px]">
+                    <label for="imagen" class="image-button">
+                        <img id="preview" src="assets/Image placeholder.png" alt="Logo" style="width: 170px; height: 170px;">
+                        <input type="file" id="imagen" accept="image/*" style="display: none;">
+                    </label>
                 </div>
                 <div class="text-center mt-[-180px]">
                     <p class="grid grid-cols-1 text-[#D1D1D1] font-bold text-3xl">Agregar Imagen</p>
@@ -50,7 +51,6 @@
         <footer>
             <div class="footer-container">
                 <div class="footer-section">
-                   
                     <p style = "font-size: 37px;"><strong>Mini-Markett</strong></p>
                     <p>Tú conveniencia ¡nuestra prioridad!</p>
                 </div>
@@ -70,5 +70,8 @@
             </div>
         </footer>
     </form>
+
+    
+    <script src="JS/Registrarse.js"></script>
 </body>
 </html>

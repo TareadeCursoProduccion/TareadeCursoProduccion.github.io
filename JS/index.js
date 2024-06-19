@@ -1,4 +1,33 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function() {
+    const perfilButton = document.querySelector('.profile-button');
+    const usuarioInput = localStorage.getItem('currentUser');  // Asumiendo que 'usuario' es el ID del input
+    const loginLink = document.getElementById('loginLink');
+    const registerLink = document.getElementById('registerLink');
+    const logoutLink = document.getElementById('logoutLink');
+    const imagesas = document.getElementById('logo');
+    if(usuarioInput)
+    {
+        perfilButton.innerHTML = usuarioInput;
+        loginLink.style.display = 'none';
+        registerLink.style.display = 'none';
+        logoutLink.style.display = 'block';
+        //imagesas.src = localStorage.getItem('profileImage');
+    }
+    else
+    {
+        perfilButton.innerHTML = "Mi Perfil";
+        loginLink.style.display = 'block';
+        registerLink.style.display = 'block';
+        logoutLink.style.display = 'none';
+    }
+    
+    logoutLink.addEventListener('click', function() {
+        const confirmacion = confirm("¿Estás seguro de que quieres cerrar sesión?");
+        if (confirmacion) {
+            localStorage.removeItem('currentUser');
+            location.reload();
+        }
+    });
     const buttons = document.querySelectorAll(".round-button");
     const promocionesTitle = document.querySelector(".main-text");
     const promocionesContainer = document.querySelector(".promociones");

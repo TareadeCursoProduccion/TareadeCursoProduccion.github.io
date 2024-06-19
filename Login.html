@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Pagina Principal</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link rel="stylesheet" href="CSS/footer.css">
-    </head>
+<head>
+    <title>Pagina Principal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="CSS/footer.css">
+</head>
 <body>
     <div class="absolute top-[30px] right-[30px]">
         <button onclick="window.location.href='index.html'">
@@ -24,7 +24,7 @@
                 alt="icon"
                 class="w-[250px] h-[250px] lg:w-[150px] lg:h-[150px]">
             </div>
-            <form action="#" method="post" class="space-y-4">
+            <form id="loginForm" action="#" method="post" class="space-y-4">
                 <div class="flex justify-center mb-4 mt-[4rem]">
                     <label for="usuario" class="sr-only">Usuario</label>
                     <input type="text" id="usuario" name="usuario" placeholder="Usuario" required
@@ -36,7 +36,7 @@
                     class=" px-[10rem] py-2 border rounded-lg text-slate-700 ring-slate-700 focus:outline-none focus:ring-2 focus:ring-orange-600">
                 </div>
                 <div class="flex justify-center mb-4 mt-[4rem]">
-                <button type="submit" class="bg-[#FFD589] text-black px-4 py-2 rounded-lg font-bold flex items-center justify-center">
+                <button id="loginButton" type="submit" class="bg-[#FFD589] text-black px-4 py-2 rounded-lg font-bold flex items-center justify-center">
                     <span class="mr-2">+</span> Iniciar sesión <span class="mr-2">+</span>
                 </button>
                 </div>
@@ -72,6 +72,8 @@
             <p><a href="PoliticasPrivacidad.html">Políticas de privacidad</a> | <a href="PoliticasSeguridad.html">Políticas de seguridad</a></p>
         </div>
     </footer>
+
+    <script src="JS/Registrarse.js"></script>
 </body>
 </html>
 
