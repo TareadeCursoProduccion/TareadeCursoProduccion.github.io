@@ -15,21 +15,23 @@
             <h1>Mini-Markett</h1>
         </div>
         <div class="search-bar">
-            <input type="text" placeholder="¿Que estas buscando?">
+            <input type="text" id="searchInput" placeholder="¿Qué estás buscando?">
         </div>
         <div class="dropdown">
             <button type="button" class="profile-button" id="profileButton">Mi Perfil</button>
             <div class="dropdown-options">
               <a id = 'loginLink' href="Login.html">Iniciar Sesion</a>
               <a id = 'registerLink' href="Register.html">Registrarse</a>
+              <a id = 'AdminLink'style='display:none' href="inventario.html">Administrar</a>
               <a id = 'logoutLink' href="#">Cerrar Sesion</a>
             </div>
           </div>
         <div>
-            <button class="round-button2" >
+            <button class="round-button2" id="cestaButton" >
                 <a href="CestaDeCompra.html"><img style="width: 40px; height: 40px; margin-top: 5px; margin-left: px; " src="assets/cesta icon.png" alt="alimentos"></a>
                 
             </button >   
+            <span id="cantidadCesta" style="margin-left: 10px;">0</span>
         </div>
 
     </header>
@@ -70,34 +72,34 @@
                 <p><strong>Coca-Cola Zero 2.5L (2 Pack)</strong></p>
                 <p>¡Duplica el sabor sin las calorías con nuestro pack especial de 2 botellas de 2.5 litros de Coca-Cola Zero!</p>
                 <p><strong>C$90.00</strong></p>
-                <button>Añadir al carrito</button>
+                <button class="add-to-cart-button">Añadir al carrito</button>
+                <div class="product-counter" style="display: none;">0</div>
             </div>
             <div class="promo-item" style="justify-content: center;">
                 <img src="assets/image 1.png" alt="Jumex Variedad Frutas" style="width: 190px; height: 240px;">
                 <p><strong>Jumex Variedad Frutas (2x1)</strong></p>
                 <p>Aprovecha nuestra promoción 2x1 en Jumex variedad frutas y lleva el doble de sabor refrescante a casa con cada botella!</p>
                 <p><strong>C$60.00</strong></p>
-                <button>Añadir al carrito</button>
+                <button class="add-to-cart-button">Añadir al carrito</button>
+                <div class="product-counter" style="display: none;">0</div>
             </div>
             <div class="promo-item">
                 <img src="assets/producto 3.png" alt="Cereales Kellogg's" style="width: 190px; height: 240px;">
                 <p><strong>Cereales Kellogg's (3x2)</strong></p>
                 <p>¡Desayuna con más variedad y ahorro con nuestra oferta especial 3x2 en cereales Kellogg's!</p>
                 <p><strong>C$850.00</strong></p>
-                <button>Añadir al carrito</button>
+                <button class="add-to-cart-button">Añadir al carrito</button>
+                <div class="product-counter" style="display: none;">0</div>
             </div>
             <div class="promo-item">
                 <img src="assets/image 3.png" alt="Helado Cremissimo" style="width: 190px; height: 240px;">
                 <p><strong>Helado Cremissimo 1L (Todos los sabores) + ¡Regalo! Palomitas ACT II 80g</strong></p>
                 <p>Satisfacción en cada bocado! Helado Cremissimo 1L + Palomitas ACT II 80g de cortesía para una experiencia de sabor incomparable.</p>
                 <p><strong>C$190.00</strong></p>
-                <button>Añadir al carrito</button>
+                <button class="add-to-cart-button">Añadir al carrito</button>
+                <div class="product-counter" style="display: none;">0</div>
             </div>
         </div>
-        <a href="CestaDeCompra.html">Cesta</a>
-        <a href="inventario.html">Inventario</a>
-        <a href="JS/prueba.html">prueba</a>
-        <a href="JS/prueba2.html">prueba</a>
     </main>
 </body>
 <footer>

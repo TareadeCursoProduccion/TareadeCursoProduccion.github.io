@@ -214,7 +214,7 @@ body {
     margin-bottom: 40px; 
 }
 
-.create-button {
+.create-button, .update-button {
     background-color: #FFD589;
     color: black;
     border: none;
@@ -224,7 +224,7 @@ body {
     cursor: pointer;
 }
 
-.create-button i {
+.create-button i, .update-button i {
     margin-right: 10px;
 }
 

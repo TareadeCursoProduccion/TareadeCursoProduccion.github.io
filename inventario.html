@@ -1,175 +1,165 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventario y Categorías</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/Inventario.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventario y Categorías</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="CSS/Inventario.css" />
 </head>
 <body>
-    <div class="sidebar">
-        <div class="product-actions">
-            <button class="image-buton" id="dashboardButton">
-                <img src="assets/Backgrounddashboard.png" alt="Logo">
-            </button>
-        </div> 
-        <div class="product-actions">
-            <button class="image-buton" id="inventoryButton">
-                <img src="assets/ImageInventario.png" alt="Logo">
-            </button>
-        </div> 
-        <div class="product-actions">
-            <button class="image-buton" id="categoryButton">
-                <img src="assets/IconCategory.png" alt="Logo">
-            </button>
-        </div> 
+  <div class="sidebar">
+    <!-- Div 1: Cambiado a 'product-actions' -->
+    <div class="product-actions">
+      <button class="image-buton" id="dashboardButton">
+        <img src="assets/Backgrounddashboard.png" alt="Logo" />
+      </button>
     </div>
-    <div class="main-content">
-        <!-- Contenedor de Inventario -->
-        <div id="inventorySection">
-            <div class="header">
-                <h1>Inventario</h1>
-                <input type="text" placeholder="Buscar">
-            </div>
-            <div class="product-list">
-                <div class="header-row">
-                    <span>3 Productos</span>
-                    <span>Cantidad</span>
-                    <span>Coste</span>
-                    <span>Precio</span>
-                </div>
-                <div class="product-item">
-                    <div class="product-details">
-                        <img src="assets/Image placeholder.png" alt="Producto 1">
-                        <span class="product-name">Producto 1</span>
-                        <span class="product-quantity">8</span>
-                        <span class="product-cost">120</span>
-                        <span class="product-price">C$150</span>
-                    </div>
-                    <div class="product-actions">
-                        <button class="image-button">
-                            <img src="assets/pencil.png" alt="Editar">
-                        </button>
-                        <button class="image-button">
-                            <img src="assets/trash.png" alt="Eliminar">
-                        </button>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="product-details">
-                        <img src="assets/Image placeholder.png" alt="Producto 1">
-                        <span class="product-name">Producto 1</span>
-                        <span class="product-quantity">8</span>
-                        <span class="product-cost">25</span>
-                        <span class="product-price">C$30</span>
-                    </div>
-                    <div class="product-actions">
-                        <button class="image-button">
-                            <img src="assets/pencil.png" alt="Editar">
-                        </button>
-                        <button class="image-button">
-                            <img src="assets/trash.png" alt="Eliminar">
-                        </button>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="product-details">
-                        <img src="assets/Image placeholder.png" alt="Producto 1">
-                        <span class="product-name">Producto 1</span>
-                        <span class="product-quantity">8</span>
-                        <span class="product-cost">80</span>
-                        <span class="product-price">C$95</span>
-                    </div>
-                    <div class="product-actions">
-                        <button class="image-button">
-                            <img src="assets/pencil.png" alt="Editar">
-                        </button>
-                        <button class="image-button">
-                            <img src="assets/trash.png" alt="Eliminar">
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <button class="add-button">+</button>
+
+    <!-- Div 2: Cambiado a 'product-actions' -->
+    <div class="product-actions">
+      <button class="image-buton" id="inventoryButton">
+        <img src="assets/ImageInventario.png" alt="Logo" />
+      </button>
+    </div>
+
+    <!-- Div 3: Cambiado a 'product-actions' -->
+    <div class="product-actions">
+      <button class="image-buton" id="categoryButton">
+        <img src="assets/IconCategory.png" alt="Logo" />
+      </button>
+    </div>
+  </div>
+
+<div class="main-content">
+    <!-- Contenedor de Inventario -->
+    <div id="inventorySection" style="display: none;">
+        <div class="header">
+          <h1>Inventario de Productos</h1>
+          <input type="text" placeholder="Buscar" />
         </div>
-        <!-- Contenedor de Categorías -->
-        <div id="categorySection" style="display:none;">
-            <div class="header">
-                <h1>Categorías</h1>
-                <input type="text" placeholder="Buscar">
-            </div>
-            <div class="product-list">
-                <div class="header-row">
-                    <span style="text-align: start;">3 Categorías</span>
-                </div>
-                <div class="product-item">
-                    <div class="product-details">
-                        <img src="assets/Image placeholder.png" alt="Categoría 1">
-                        <span class="product-name">Categoría 1</span>
-                    </div>
-                    <div class="product-actions">
-                        <button class="image-button">
-                            <img src="assets/pencil.png" alt="Editar">
-                        </button>
-                        <button class="image-button">
-                            <img src="assets/trash.png" alt="Eliminar">
-                        </button>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="product-details">
-                        <img src="assets/Image placeholder.png" alt="Categoría 2">
-                        <span class="product-name">Categoría 2</span>
-                    </div>
-                    <div class="product-actions">
-                        <button class="image-button">
-                            <img src="assets/pencil.png" alt="Editar">
-                        </button>
-                        <button class="image-button">
-                            <img src="assets/trash.png" alt="Eliminar">
-                        </button>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="product-details">
-                        <img src="assets/Image placeholder.png" alt="Categoría 3">
-                        <span class="product-name">Categoría 3</span>
-                    </div>
-                    <div class="product-actions">
-                        <button class="image-button">
-                            <img src="assets/pencil.png" alt="Editar">
-                        </button>
-                        <button class="image-button">
-                            <img src="assets/trash.png" alt="Eliminar">
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <button class="add-button" id="openModalButton">+</button>
+        <div class="header-row">
+            <span>3 Productos</span>
+            <span>Cantidad</span>
+            <span>Coste</span>
+            <span>Precio</span>
+          </div>
+        <div class="product-list">
+          <div class="product-list" id="productList">
+            <!-- Aquí se generarán dinámicamente los divs de productos del inventario -->
+          </div>
+          <button class="add-button" id="openModalProductButton">+</button>
         </div>
     </div>
-    
-    <!-- Modal para Crear Categoría -->
-    <div class="modal" id="createCategoryModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Crear Categoría</h2>
-                <button class="close-button" id="closeModalButton">✖</button>
-            </div>
-            <div class="modal-body">
-                <img src="assets/Image placeholder.png" alt="Agregar Imagen" id="imageDisplay">
-                <canvas id="canvas" style="display: none;"></canvas>
-                <!-- <span>Agregar Imagen</span> -->
-                <input type="file" id="fileInput" accept="image/*">
-                <label for="fileInput" class="custom-file-upload">Agregar Imagen</label>
-                <input type="text" placeholder="Nombre">
-            </div>
-            <div class="modal-footer">
-                <button class="create-button"><i class="fas fa-plus"></i> Crear Categoría</button>
-            </div>
-        </div>
+    <!-- Modal para Crear Producto -->
+<div class="modal" id="createProductModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Crear Producto</h2>
+        <button class="close-button" id="closeProductModalButton">✖</button>
+      </div>
+      <div class="modal-body">
+        <img src="assets/Image placeholder.png" alt="Agregar Imagen" id="productImageDisplay" />
+        <canvas id="productCanvas" style="display: none"></canvas>
+        <input type="file" id="productFileInput" accept="image/*" />
+        <label for="productFileInput" class="custom-file-upload">Agregar Imagen</label>
+        <input type="text" placeholder="Nombre del Producto" id="productNameInput" />
+        <input type="number" placeholder="Cantidad" id="productQuantityInput" />
+        <input type="number" placeholder="Costo" id="productCostInput" />
+        <input type="number" placeholder="Precio" id="productPriceInput" />
+      </div>
+      <div class="modal-footer">
+        <button class="create-product-button"><i class="fas fa-plus"></i> Crear Producto</button>
+      </div>
     </div>
-    <script src="JS/inventario.js"></script>
+  </div>
+
+  <!-- Modal para Modificar Producto -->
+  <div class="modal" id="modifyProductModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Modificar Producto</h2>
+        <button class="close-button" id="closeModifyProductModalButton">✖</button>
+      </div>
+      <div class="modal-body">
+        <img src="assets/Image placeholder.png" alt="Imagen Actual" id="modifyProductImageDisplay" />
+        <canvas id="modifyProductCanvas" style="display: none"></canvas>
+        <input type="file" id="modifyProductFileInput" accept="image/*" />
+        <label for="modifyProductFileInput" class="custom-file-upload">Agregar Imagen</label>
+        <input type="hidden" id="modifyProductId" />
+        <input type="text" placeholder="Nuevo Nombre" id="modifyProductName" />
+        <input type="number" placeholder="Nueva Cantidad" id="modifyProductQuantity" />
+        <input type="number" placeholder="Nuevo Costo" id="modifyProductCost" />
+        <input type="number" placeholder="Nuevo Precio" id="modifyProductPrice" />
+      </div>
+      <div class="modal-footer">
+        <button class="update-product-button"><i class="fas fa-save"></i> Guardar Cambios</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenedor de Categorías -->
+  <div id="categorySection" style="display: none">
+    <div class="header">
+      <h1>Categorías</h1>
+      <input type="text" placeholder="Buscar" />
+    </div>
+    <div class="header-row">
+      <span style="text-align: start">3 Categorías</span>
+    </div>
+    <div class="product-list" id="categoryList">
+      <!-- Aquí se generarán dinámicamente los divs de categorías -->
+    </div>
+    <button class="add-button" id="openModalButton">+</button>
+  </div>
+
+  <!-- Modal para Crear Categoría -->
+  <div class="modal" id="createCategoryModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Crear Categoría</h2>
+        <button class="close-button" id="closeModalButton">✖</button>
+      </div>
+      <div class="modal-body">
+        <img src="assets/Image placeholder.png" alt="Agregar Imagen" id="imageDisplay" />
+        <canvas id="canvas" style="display: none"></canvas>
+        <input type="file" id="fileInput" accept="image/*" />
+        <label for="fileInput" class="custom-file-upload">Agregar Imagen</label>
+        <input type="text" placeholder="Nombre" />
+      </div>
+      <div class="modal-footer">
+        <button class="create-button"><i class="fas fa-plus"></i> Crear Categoría</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para Modificar Categoría -->
+  <div class="modal" id="modifyCategoryModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Modificar Categoría</h2>
+        <button class="close-button" id="closeModifyModalButton">✖</button>
+      </div>
+      <div class="modal-body">
+        <img src="assets/Image placeholder.png" alt="Imagen Actual" id="modifyImageDisplay" />
+        <canvas id="canvas" style="display: none"></canvas>
+        <input type="file" id="fileInput" accept="image/*" />
+        <label for="fileInput" class="custom-file-upload">Agregar Imagen</label>
+        <input type="hidden" id="modifyCategoryId" />
+        <input type="text" placeholder="Nuevo Nombre" id="modifyCategoryName" />
+      </div>
+      <div class="modal-footer">
+        <button class="update-button"><i class="fas fa-save"></i> Guardar Cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <script src="JS/inventario.js"></script>
 </body>
 </html>
+
+
+
+

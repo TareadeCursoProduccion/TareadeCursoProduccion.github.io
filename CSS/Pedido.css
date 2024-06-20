@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+header img {
+    width: 80px;
+    height: 80px;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+header nav span {
+    margin-left: 10px;
+    color: #666;
+}
+
+header nav .active {
+    font-weight: bold;
+    color: #000;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+
+
+.billing-info, .summary {
+    width: 45%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.billing-info h2, .summary h2 {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.active
+{
+    margin-left: 600px;
+}
+.billing-info form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.billing-info form input, .billing-info form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.card-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-details div {
+    width: 48%;
+}
+
+.summary-details {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.summary-details div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.summary-details div:last-child {
+    font-weight: bold;
+}
+
+button.realizarPagoButton {
+    width: 100%;
+    padding: 15px;
+    background-color: #f0ad4e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+
+button.realizarPagoButton:hover {
+    background-color: #ec971f;
+}

@@ -65,11 +65,12 @@ document.getElementById('loginForm')?.addEventListener('submit', function(event)
 
     const usuario = document.getElementById('usuario').value.trim();
     const password = document.getElementById('contrasena').value;
-    localStorage.setItem('currentUser',usuario);
+    
 
     if (usuario === 'Admin' && password === 'admin2024') {
+        
         alert('Inicio de sesión como administrador exitoso.');
-
+        localStorage.setItem('currentUser',usuario);
         window.location.href = 'index.html';
         return;
     }
@@ -77,7 +78,9 @@ document.getElementById('loginForm')?.addEventListener('submit', function(event)
     const userInfo = JSON.parse(localStorage.getItem(usuario));
 
     if (userInfo && userInfo.password === password) {
+        
         alert('Inicio de sesión exitoso.');
+        localStorage.setItem('currentUser',usuario);
        
         window.location.href = 'index.html';
     } else {
