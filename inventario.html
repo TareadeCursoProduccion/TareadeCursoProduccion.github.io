@@ -33,13 +33,17 @@
 
 <div class="main-content">
     <!-- Contenedor de Inventario -->
+     <div id="dashboardSection">
+      <p>hola</p>
+     </div>
+
     <div id="inventorySection" style="display: none;">
         <div class="header">
           <h1>Inventario de Productos</h1>
           <input type="text" placeholder="Buscar" />
         </div>
         <div class="header-row">
-            <span>3 Productos</span>
+          <span id="productCount">0 Productos</span>
             <span>Cantidad</span>
             <span>Coste</span>
             <span>Precio</span>
@@ -63,10 +67,10 @@
         <canvas id="productCanvas" style="display: none"></canvas>
         <input type="file" id="productFileInput" accept="image/*" />
         <label for="productFileInput" class="custom-file-upload">Agregar Imagen</label>
-        <input type="text" placeholder="Nombre del Producto" id="productNameInput" />
-        <input type="number" placeholder="Cantidad" id="productQuantityInput" />
-        <input type="number" placeholder="Costo" id="productCostInput" />
-        <input type="number" placeholder="Precio" id="productPriceInput" />
+        <input type="text" placeholder="nombreProducto" id="productNameInput" />
+        <input type="number" placeholder="cantidad" id="productQuantityInput" />
+        <input type="number" placeholder="costo" id="productCostInput" />
+        <input type="number" placeholder="precio" id="productPriceInput" />
       </div>
       <div class="modal-footer">
         <button class="create-product-button"><i class="fas fa-plus"></i> Crear Producto</button>
@@ -105,7 +109,7 @@
       <input type="text" placeholder="Buscar" />
     </div>
     <div class="header-row">
-      <span style="text-align: start">3 Categorías</span>
+      <span style="text-align: start" id="categoriesCount">0 Categorías</span>
     </div>
     <div class="product-list" id="categoryList">
       <!-- Aquí se generarán dinámicamente los divs de categorías -->

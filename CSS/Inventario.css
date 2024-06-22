@@ -198,7 +198,7 @@ body {
     height: 80px;
 }
 
-.modal-body input[type="text"] {
+.modal-body input[type="text"], .modal-body input[type="number"] {
     margin-top: 20px;
     padding: 10px;
     width: 80%;
@@ -214,7 +214,7 @@ body {
     margin-bottom: 40px; 
 }
 
-.create-button, .update-button {
+.create-button, .update-button, .create-product-button, .update-product-button {
     background-color: #FFD589;
     color: black;
     border: none;
@@ -228,7 +228,7 @@ body {
     margin-right: 10px;
 }
 
-#fileInput {
+#fileInput, #productFileInput, #modifyProductFileInput {
     opacity: 0;
     width: 0.1px;
     height: 0.1px;
