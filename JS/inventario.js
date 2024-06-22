@@ -175,27 +175,28 @@ function inicializarModal() {
 
 // Función para actualizar el contador de productos
 function updateCategoryCount() {
-    const categoryList = document.getElementById('categoryList');
-    const categoriesCount = categoryList.children.length;
-    const categoriesCountSpan = document.getElementById('categoriesCount');
-    categoriesCountSpan.textContent = `${categoriesCount} Categoría${categoriesCount !== 1 ? 's' : ''}`;
+  const categoryList = document.getElementById("categoryList");
+  const categoriesCount = categoryList.children.length;
+  const categoriesCountSpan = document.getElementById("categoriesCount");
+  categoriesCountSpan.textContent = `${categoriesCount} Categoría${
+    categoriesCount !== 1 ? "s" : ""
+  }`;
 }
 
 // Función para actualizar el contador de productos
 function updateProductCount() {
-    const productList = document.getElementById('productList');
-    const productCount = productList.children.length;
-    const productCountSpan = document.getElementById('productCount');
-    productCountSpan.textContent = `${productCount} Producto${productCount !== 1 ? 's' : ''}`;
+  const productList = document.getElementById("productList");
+  const productCount = productList.children.length;
+  const productCountSpan = document.getElementById("productCount");
+  productCountSpan.textContent = `${productCount} Producto${
+    productCount !== 1 ? "s" : ""
+  }`;
 }
 
-
-
-
 // Llamar a updateProductCount al cargar la página para mostrar el conteo inicial si ya hay productos en el DOM
-document.addEventListener('DOMContentLoaded', (event) => {
-    updateProductCount();
-    updateCategoryCount();
+document.addEventListener("DOMContentLoaded", (event) => {
+  updateProductCount();
+  updateCategoryCount();
 });
 
 // Generar un ID único para cada categoría (puedes usar una función más robusta según tus necesidades)
