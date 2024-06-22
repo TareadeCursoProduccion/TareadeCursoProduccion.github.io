@@ -111,3 +111,31 @@ main h2 {
 .continue-btn:hover {
     background-color: #FFD589;
 }
+
+
+
+
+.header-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFD589;
+    padding: 10px 20px;
+}
+
+.header-principal .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-principal .logo img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+  }
+
+  .header-principal h1{
+    font-size: 32px;
+    font-weight: 700;
+  }
+
