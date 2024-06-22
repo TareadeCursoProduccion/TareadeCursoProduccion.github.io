@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="CSS/index.css">
     <link rel="stylesheet" href="CSS/footer.css">
     <script src="JS/index.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<!-- Scripts de Bootstrap (jQuery necesario) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <header>
@@ -15,10 +21,10 @@
             <h1>Mini-Markett</h1>
         </div>
         <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="¿Qué estás buscando?">
+            <input type="text" id="searchInput" placeholder="¿Qué estás buscando?" style="height: 50px;width: 500px;margin-left: -80px;">
         </div>
         <div class="dropdown">
-            <button type="button" class="profile-button" id="profileButton">Mi Perfil</button>
+            <button type="button" class="profile-button" id="profileButton" style="margin-left: -70px;">Mi Perfil</button>
             <div class="dropdown-options">
               <a id = 'loginLink' href="Login.html">Iniciar Sesion</a>
               <a id = 'registerLink' href="Register.html">Registrarse</a>
@@ -35,6 +41,51 @@
         </div>
 
     </header>
+    <style>
+        .carousel-indicators {
+          display: none; /* Oculta los indicadores */
+        }
+        .carousel-item img {
+      width: 5000px;
+      height: auto;
+      object-fit: cover;
+      scale: 1.2;
+      margin-bottom: -50px;
+      
+    }
+
+      </style>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+          <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+          <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+          <!-- Agrega más list items si tienes más imágenes -->
+        </ol>
+        <div class="carousel-inner" id = 'carrouselMain' style="z-index: -5;">
+          <div class="carousel-item active" style="margin-top: 100px;">
+            <img src="assets/promoCarrusel1banner.png" class="d-block w-100" alt="Primera imagen" style="transform: scale(0.9); width: 1600px; margin-left: -0px; margin-top: 5px;">
+          </div>
+          <div class="carousel-item" style="margin-top: 100px;">
+            <img src="assets/promoCarrusel2banner.png" class="d-block w-100" alt="Segunda imagen" style="transform: scale(0.9); width: 1600px; margin-left: -0px; margin-top: 5px;">
+          </div>
+          <div class="carousel-item" style="margin-top: 100px;">
+            <img src="assets/promoCarrusel3banner.png" class="d-block w-100" alt="Tercera imagen" style="transform: scale(0.9); width: 1600px; margin-left: -0px; margin-top: 5px;">
+          </div>
+          <!-- Agrega más divs con la clase "carousel-item" y las imágenes correspondientes -->
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev" style="margin-top: 100px;">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next" style="margin-top: 100px;">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-5OxCu6G1IiFlCpKl/f13rUrEG8Z2SA/G8bUw7ZieQ8JONCMr/6Ixgn5iAVL+QnGW" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
     <div class="categories-container" align="center" >
         
         
@@ -55,10 +106,10 @@
                 <img style="width: 60px; height: 60px; margin-top: 0px; margin-left: px;"  src="assets/higiene icon.png" alt="higiene">
             </button> 
             <button class="round-button">
-                <img style="width: 55px; height: 60px; margin-top: 0px; margin-left: px;"  src="assets/Lacteos icon.png" alt="lacteos">
+                <img style="width: 55px; height: 60px; margin-top: 0px; margin-left: px;"  src="assets/lacteos icon.png" alt="lacteos">
             </button> 
             <button class="round-button">
-                <img style="width: 50px; height: 65px; margin-top: 5px; margin-left: px;"  src="assets/Limpieza icon.png" alt="limpieza">
+                <img style="width: 50px; height: 65px; margin-top: 5px; margin-left: px;"  src="assets/limpieza icon.png" alt="limpieza">
             </button> 
         </div>
           
@@ -101,10 +152,9 @@
             </div>
         </div>
     </main>
-    <p><a href="inventario.html">inventario</a></p>
 </body>
-<footer>
-    <div class="footer-container">
+<footer id = "footerIndex">
+    <div class="footer-container" >
         <div class="footer-section">
            
             <p style = "font-size: 37px;"><strong>Mini-Markett</strong></p>

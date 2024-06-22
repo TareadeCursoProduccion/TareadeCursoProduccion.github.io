@@ -1,0 +1,239 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  position:fixed;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFD589;
+  padding: 10px 20px;
+  z-index: 5;
+  width: 100%;
+}
+
+.round-button.active {
+  background-color: #000000; /* Cambia el color del botón cuando está activo */
+  transform: translateY(5px); /* Mueve el botón hacia abajo cuando está activo */
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+}
+
+header .logo img {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+header .search-bar input {
+  width: 500px;
+  height: 25px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+header .profile {
+  display: flex;
+  align-items: center;
+}
+
+header .profile span {
+  margin-right: 20px;
+}
+
+header .cart {
+  display: flex;
+  align-items: center;
+}
+
+header .cart img {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+  margin-left: 14rem;
+}
+
+.search-bar {
+  margin-left: 13rem;
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.profile-button {
+  border: none;
+  border-radius: 5px;
+  padding: 15px 30px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.profile-button:hover {
+  background-color: #ddd;
+}
+
+.round-button {
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border-color: #000000;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.round-button:hover {
+  background-color: #ddd;
+}
+
+.round-button2 {
+  display: block;
+  border-radius: 50%;
+  border-color: #000000;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  background-color: #FFD589;
+  width: 60px;
+  height: 60px;
+}
+
+.round-button2:hover {
+  background-color: #dcb977;
+}
+
+.dropdown-options {
+  display: none;
+  position: absolute;
+  overflow: auto;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+}
+
+.dropdown:hover .dropdown-options {
+  display: block;
+}
+
+.dropdown-options a {
+  display: block;
+  color: #000000;
+  padding: 5px;
+  text-decoration: none;
+  padding: 20px 40px;
+}
+
+.dropdown-options a:hover {
+  color: #0a0a23;
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+nav {
+  background-color: #fff;
+}
+
+.categories-container {
+  justify-content: center;
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+nav ul li {
+  display: inline;
+  align-items: center;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  align-items: center;
+}
+
+main {
+  padding: 20px;
+}
+
+main h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.promociones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  height: 500px;
+}
+
+.promo-item {
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  border-color: #000;
+  border-width: 2px;
+  width: 220px; /* Define un ancho fijo */
+  height: 450px; /* Define una altura fija */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.promo-item img {
+  max-width: 100%;
+  width: 190px;
+  height: 240px;
+  object-fit: cover;
+  align-self: center;
+}
+
+.promo-item p {
+  margin: 10px 0;
+}
+
+.promo-item .title {
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Limita el texto a 1 línea */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.promo-item .description {
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Limita el texto a 2 líneas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 10px 0;
+  flex-grow: 1;
+}
+
+.promo-item button {
+  background-color: #f0b429;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.promo-item button:hover {
+  background-color: #e09e24;
+}
