@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const roundButton2 = document.querySelector('.round-button2');
     const cantidadCesta = document.getElementById('cantidadCesta');
     const botonCesta = document.getElementById('cestaButton');
+    const carrouselMain = document.getElementById('carrouselMain');
 
     const promocionesTitle = document.querySelector(".main-text");
     const promocionesContainer = document.querySelector(".promociones");
@@ -369,8 +370,8 @@ document.addEventListener("DOMContentLoaded", function() {
         {
             id: 'p04',
             imgSrc: "assets/image 3.png",
-            title: "Helado Cremissimo 1L (Todos los sabores) + ¡Regalo! Palomitas ACT II 80g",
-            description: "Satisfacción en cada bocado! Helado Cremissimo 1L + Palomitas ACT II 80g de cortesía para una experiencia de sabor incomparable.",
+            title: "Helado Cremissimo 1L + Palomitas ACT II 80g",
+            description: "Satisfacción en cada bocado! Helado Cremissimo 1L + Palomitas ACT II 80g de cortesía.",
             price: "C$190.00"
         }
     ];
@@ -390,20 +391,25 @@ localStorage.setItem('cestaIDs', cestaIDs);
     items.forEach(item => {
         const promoItemDiv = document.createElement("div");
         promoItemDiv.classList.add("promo-item");
-
+       
         const img = document.createElement("img");
         img.src = item.imgSrc;
         img.alt = item.title;
-
+        img.style.height = "200px"; 
         const title = document.createElement("p");
         title.innerHTML = `<strong>${item.title}</strong>`;
-
+        
         const description = document.createElement("p");
+        
         description.textContent = item.description;
-
+ 
+        description.style.maxHeight = "3.6em";
+        description.style.overflow = "hidden";
+        description.style.textOverflow = "ellipsis";
+        description.style.lineHeight = "1.8em"
         const price = document.createElement("p");
         price.innerHTML = `<strong>${item.price}</strong>`;
-
+        
         const button = document.createElement("button");
         button.textContent = carritoIds.includes(item.id) ? "Agregado" : "Añadir al carrito";
         button.style.backgroundColor = carritoIds.includes(item.id) ? "#000" : "#f0b429";
@@ -438,14 +444,20 @@ localStorage.setItem('cestaIDs', cestaIDs);
 }
 generatePromoItems(initialPromos);
 // Manejar la búsqueda
+const footer = document.getElementById('footerIndex');
 searchBar.addEventListener('input', function() {
     const searchText = searchBar.value.trim().toLowerCase();
     if (searchText === "") {
         categoriesContainer.style.display = 'flex';
+        carrouselMain.style.display = 'block';
+        footer.style.display = 'block';
         promocionesTitle.textContent = "PROMOCIONES";
+        promocionesTitle.style.marginTop = "0px";
         generatePromoItems(initialPromos);
     } else {
+        carrouselMain.style.display = 'none';
         categoriesContainer.style.display = 'none';
+        footer.style.display = 'none';
         // Filtrar productos basados en la búsqueda en promosData
         const filteredProducts = Object.values(promosData).flatMap(category =>
             category.filter(product =>
@@ -453,6 +465,7 @@ searchBar.addEventListener('input', function() {
             )
         );
         promocionesTitle.textContent = "Resultados de búsqueda";
+        promocionesTitle.style.marginTop = "110px";
         generatePromoItems(filteredProducts);
     }
 });
