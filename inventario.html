@@ -40,10 +40,11 @@
     <div id="inventorySection" style="display: none;">
         <div class="header">
           <h1>Inventario de Productos</h1>
-          <input type="text" placeholder="Buscar" />
+          <input type="text" id="searchBarP" placeholder="Buscar" />
         </div>
         <div class="header-row">
           <span id="productCount">0 Productos</span>
+            <span>Categoria</span>
             <span>Cantidad</span>
             <span>Coste</span>
             <span>Precio</span>
@@ -68,6 +69,9 @@
         <input type="file" id="productFileInput" accept="image/*" />
         <label for="productFileInput" class="custom-file-upload">Agregar Imagen</label>
         <input type="text" placeholder="nombreProducto" id="productNameInput" />
+        <select id="modifyProductCategory" name="categoriaProducto">
+          <!-- Options will be dynamically added here -->
+      </select>
         <input type="number" placeholder="cantidad" id="productQuantityInput" />
         <input type="number" placeholder="costo" id="productCostInput" />
         <input type="number" placeholder="precio" id="productPriceInput" />
@@ -92,6 +96,10 @@
         <label for="modifyProductFileInput" class="custom-file-upload">Agregar Imagen</label>
         <input type="hidden" id="modifyProductId" />
         <input type="text" placeholder="Nuevo Nombre" id="modifyProductName" />
+        <!-- <input type="text" placeholder="Nueva Categoria" id="modifyProductCategory" /> -->
+        <select id="modifyProductCategory2" name="categoriaProducto">
+          <!-- Options will be dynamically added here -->
+      </select>
         <input type="number" placeholder="Nueva Cantidad" id="modifyProductQuantity" />
         <input type="number" placeholder="Nuevo Costo" id="modifyProductCost" />
         <input type="number" placeholder="Nuevo Precio" id="modifyProductPrice" />
@@ -106,7 +114,7 @@
   <div id="categorySection" style="display: none">
     <div class="header">
       <h1>Categorías</h1>
-      <input type="text" placeholder="Buscar" />
+      <input type="text" id="searchBarC" placeholder="Buscar" />
     </div>
     <div class="header-row">
       <span style="text-align: start" id="categoriesCount">0 Categorías</span>
