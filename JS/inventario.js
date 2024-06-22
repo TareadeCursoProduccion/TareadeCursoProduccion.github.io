@@ -84,7 +84,9 @@ function inicializarModal() {
   const nombreInput = modal.querySelector('input[type="text"]');
   const nombreProductoInput =
     createProductModal.querySelector('input[type="text"]');
-    const categoriaProductoInput = document.getElementById('modifyProductCategory');
+  const categoriaProductoInput = document.getElementById(
+    "modifyProductCategory"
+  );
   const cantidadInput = createProductModal.querySelector(
     'input[type="number"][placeholder="cantidad"]'
   );
@@ -148,7 +150,7 @@ function inicializarModal() {
   // Event listener para crear una nueva categoría
   createProductButton.addEventListener("click", function () {
     const nombreInventario = nombreProductoInput.value;
-    const categoriaProducto = categoriaProductoInput.value
+    const categoriaProducto = categoriaProductoInput.value;
     const cantidadInventario = cantidadInput.value;
     const costeInventario = costoInput.value;
     const precioInventario = precioInput.value;
@@ -156,8 +158,8 @@ function inicializarModal() {
     const imagenProducto = document.getElementById("productImageDisplay").src; // Obtener la imagen del display
 
     crearProducto(
-        nombreInventario,
-        categoriaProducto,
+      nombreInventario,
+      categoriaProducto,
       cantidadInventario,
       costeInventario,
       precioInventario,
@@ -665,42 +667,270 @@ document
 // Ejemplos de uso
 
 // Crear productos del inventario
-crearProducto("Arroz Blanco 1kg", "alimentos", 8, 25, 50, "https://images.piensavirtual.com/demogreen/core/images/8426904170267.JPG");
-crearProducto("Frijoles Rojos 560g", "alimentos", 8, 25, 45, "https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00750101700436L.jpg");
-crearProducto("Aceite de Cocina 1L", "alimentos", 8, 25, 70, "https://walmartni.vtexassets.com/arquivos/ids/358632/Aceite-Don-Juan-Vegetal-1000Ml-1-7023.jpg");
-crearProducto("Harina de Maíz Precocida 1kg", "alimentos", 8, 25, 55, "https://m.media-amazon.com/images/I/71cnGp37afL._AC_UF1000,1000_QL80_.jpg");
-crearProducto("Aceitunas Verdes Rellenas 250g", "alimentos", 8, 25, 60, "https://icbatunegocio.vteximg.com.br/arquivos/ids/157473/232700530.jpg?v=637414100809400000");
-crearProducto("Pasta de Trigo Integral 500g", "alimentos", 8, 25, 40, "https://www.lasacacias.com.uy/lasacacias/wp-content/uploads/2019/12/pasta-de-trigo-duro-integral-500g-tirabuzon.jpg");
-crearProducto("Agua Mineral Natural 1.5L", "alimentos", 8, 25, 20, "https://www.ubuy.com.ni/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNzFDTk9NRExGQ0wuX1NMMTUwMF8uanBn.jpg");
-crearProducto("Refresco de Cola 2L", "alimentos", 8, 25, 30, "https://walmartni.vtexassets.com/arquivos/ids/329517/Gaseosa-Coca-Cola-regular-2-L-2-7640.jpg?v=638392773884170000");
-crearProducto("Jugo de Naranja 1L", "alimentos", 8, 25, 40, "https://www.surtilag.com/cdn/shop/products/JUGO_NARANJA_JUMEX_f03e1464-676c-4e86-909d-0f03dd023bbd_600x.jpg?v=1585764445");
-crearProducto("Cerveza Artesanal 500ml", "alimentos", 8, 25, 60, "https://organicmarketargentina.com/1207-large_default/cerveza-artesanal-blonde-ale-beer-500ml-beepure.jpg");
-crearProducto("Café Colombiano Tostado 250g", "alimentos", 8, 25, 55, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRws-c1mYPl1E_uVwbKfpfIMYwF3rTIZUT8bg&s");
-crearProducto("Té Verde Orgánico 100 bolsitas", "alimentos", 8, 25, 35, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKs3D6kOZaFlDzXNNBR4GUEmwknqmIUvrnxQ&s");
-crearProducto("Jamón Serrano 100g", "alimentos", 8, 25, 90, "https://clientes.sigmafoodservice.com/medias/515Wx515H-180.jpg?context=bWFzdGVyfGltYWdlc3wyNjU0Njl8aW1hZ2UvcG5nfGFEY3lMMmd6TVM4NU9EQTBPVFV3TURRME56QXlMelV4TlZkNE5URTFTRjh4T0RBdWFuQm58ZWZmYTVmZGZmODk4ZGNhMDUwMWFhZTdlMjQ5N2YzOGVmMGNmOWFkNTM2YTFiOTUyNjRmYzY4OWNlZmM4OTk1ZA");
-crearProducto("Salchichón Ibérico 200g", "alimentos", 8, 25, 120, "https://www.supermercadoseljamon.com/documents/10180/892067/11030468_G.jpg");
-crearProducto("Chorizo Picante 250g", "alimentos", 8, 25, 80, "https://www.supermercadosplaza.es/documents/10180/10467/010516_G.jpg");
-crearProducto("Mortadela Italiana 150g", "alimentos", 8, 25, 70, "https://sgfm.elcorteingles.es/SGFM/dctm/MEDIA03/202108/17/00118394300596____4__600x600.jpg");
-crearProducto("Salami Tipo Milano 300g", "alimentos", 8, 25, 110, "https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00750222158020L.jpg");
-crearProducto("Pastrami de Pavo 250g", "alimentos", 8, 25, 95, "https://jumbocolombiaio.vtexassets.com/arquivos/ids/184834-800-800?v=637813975764570000&width=800&height=800&aspect=true");
-crearProducto("Helado de Vainilla 1L", "alimentos", 8, 25, 100, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFyrOj5H_gBlrGRB2K0LJrRKXjU77Kw3O6KQ&s");
-crearProducto("Paleta de Mango y Chile", "alimentos", 8, 25, 25, "https://www.kokoeurope.pl/cdn/shop/files/ezgif.com-webp-to-jpg_1.jpg?v=1686635941");
-crearProducto("Helado de Chocolate Amargo 500ml", "alimentos", 8, 25, 120, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEP0d9LDPcZiOwEtrU0NQFEwZGmCZFoviV-g&s");
-crearProducto("Sundae de Fresa y Nata", "alimentos", 8, 25, 80, "https://www.laneveria.com.sv/wp-content/uploads/2017/04/WEB-LLEVAR-LITROFRESA.png");
-crearProducto("Popsicle de Yogurt y Frutas", "alimentos", 8, 25, 30, "https://walmartcr.vtexassets.com/arquivos/ids/504834-500-auto?v=638415134387270000&width=500&height=auto&aspect=true");
-crearProducto("Helado de Crema Irlandesa 750ml", "alimentos", 8, 25, 150, "https://www.conaprole.uy/wp-content/uploads/2018/12/97252-PolipapelCIrlandyChoc900ml-1-600x600.png");
-crearProducto("Jabón Líquido Antibacterial 500ml", "limpieza", 8, 25, 35, "https://walmartni.vtexassets.com/arquivos/ids/370071/Jab-n-L-quido-Antibacterial-Protex-Avena-Prebi-tico-500-ml-2-9982.jpg?v=638451958286030000");
-crearProducto("Shampoo Restauración Capilar 400ml", "cuidado personal", 8, 25, 50, "https://walmartni.vtexassets.com/arquivos/ids/379759/Shampoo-Pantene-Pro-V-Restauraci-n-400ml-1-8724.jpg?v=638478963195100000");
-crearProducto("Papel Higiénico Ultra Suave (Pack 6 rollos)", "limpieza", 8, 25, 60, "https://m.media-amazon.com/images/I/71IklRSnYJL.jpg");
-crearProducto("Leche Entera 1L", "alimentos", 8, 25, 30, "https://walmartni.vtexassets.com/arquivos/ids/287034/Leche-UHT-marca-Lala-Entera-1L-1-10968.jpg?v=638251727135970000");
-crearProducto("Queso Parmesano 200g", "alimentos", 8, 25, 150, "https://jumbo.vtexassets.com/arquivos/ids/413970/Queso-parmesano-Gran-Reserva-trozo-200-g.jpg?v=637473108205700000");
-crearProducto("Yogurt Natural 500g", "alimentos", 8, 25, 45, "https://walmartni.vtexassets.com/arquivos/ids/359686/Yogurt-bonlac-natural-500gr.jpg?v=638426169155430000");
-crearProducto("Coca-Cola Zero 2.5L (2 Pack)", "bebidas", 8, 25, 90, "assets/proudco2.jpg");
-crearProducto("Agua Mineral 500ml", "bebidas", 8, 25, 10, "https://www.ubuy.com.ni/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNzFDTk9NRExGQ0wuX1NMMTUwMF8uanBn.jpg");
-crearProducto("Desodorante Roll-On Fresh 50ml", "cuidado personal", 8, 25, 25, "https://images.ctfassets.net/njdrd936eipt/2wrognCD0GPuv5O2Zk3NsK/08917c0bc32157ddb0fc64569d7ed210/roll-on-antitranspirante-FRESH.png?fm=webp&w=480&q=75");
-
-
-
+crearProducto(
+  "Arroz Blanco 1kg",
+  "alimentos",
+  8,
+  25,
+  50,
+  "https://images.piensavirtual.com/demogreen/core/images/8426904170267.JPG"
+);
+crearProducto(
+  "Frijoles Rojos 560g",
+  "alimentos",
+  8,
+  25,
+  45,
+  "https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00750101700436L.jpg"
+);
+crearProducto(
+  "Aceite de Cocina 1L",
+  "alimentos",
+  8,
+  25,
+  70,
+  "https://walmartni.vtexassets.com/arquivos/ids/358632/Aceite-Don-Juan-Vegetal-1000Ml-1-7023.jpg"
+);
+crearProducto(
+  "Harina de Maíz Precocida 1kg",
+  "alimentos",
+  8,
+  25,
+  55,
+  "https://m.media-amazon.com/images/I/71cnGp37afL._AC_UF1000,1000_QL80_.jpg"
+);
+crearProducto(
+  "Aceitunas Verdes Rellenas 250g",
+  "alimentos",
+  8,
+  25,
+  60,
+  "https://icbatunegocio.vteximg.com.br/arquivos/ids/157473/232700530.jpg?v=637414100809400000"
+);
+crearProducto(
+  "Pasta de Trigo Integral 500g",
+  "alimentos",
+  8,
+  25,
+  40,
+  "https://www.lasacacias.com.uy/lasacacias/wp-content/uploads/2019/12/pasta-de-trigo-duro-integral-500g-tirabuzon.jpg"
+);
+crearProducto(
+  "Agua Mineral Natural 1.5L",
+  "alimentos",
+  8,
+  25,
+  20,
+  "https://www.ubuy.com.ni/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNzFDTk9NRExGQ0wuX1NMMTUwMF8uanBn.jpg"
+);
+crearProducto(
+  "Refresco de Cola 2L",
+  "alimentos",
+  8,
+  25,
+  30,
+  "https://walmartni.vtexassets.com/arquivos/ids/329517/Gaseosa-Coca-Cola-regular-2-L-2-7640.jpg?v=638392773884170000"
+);
+crearProducto(
+  "Jugo de Naranja 1L",
+  "alimentos",
+  8,
+  25,
+  40,
+  "https://www.surtilag.com/cdn/shop/products/JUGO_NARANJA_JUMEX_f03e1464-676c-4e86-909d-0f03dd023bbd_600x.jpg?v=1585764445"
+);
+crearProducto(
+  "Cerveza Artesanal 500ml",
+  "alimentos",
+  8,
+  25,
+  60,
+  "https://organicmarketargentina.com/1207-large_default/cerveza-artesanal-blonde-ale-beer-500ml-beepure.jpg"
+);
+crearProducto(
+  "Café Colombiano Tostado 250g",
+  "alimentos",
+  8,
+  25,
+  55,
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRws-c1mYPl1E_uVwbKfpfIMYwF3rTIZUT8bg&s"
+);
+crearProducto(
+  "Té Verde Orgánico 100 bolsitas",
+  "alimentos",
+  8,
+  25,
+  35,
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKs3D6kOZaFlDzXNNBR4GUEmwknqmIUvrnxQ&s"
+);
+crearProducto(
+  "Jamón Serrano 100g",
+  "alimentos",
+  8,
+  25,
+  90,
+  "https://clientes.sigmafoodservice.com/medias/515Wx515H-180.jpg?context=bWFzdGVyfGltYWdlc3wyNjU0Njl8aW1hZ2UvcG5nfGFEY3lMMmd6TVM4NU9EQTBPVFV3TURRME56QXlMelV4TlZkNE5URTFTRjh4T0RBdWFuQm58ZWZmYTVmZGZmODk4ZGNhMDUwMWFhZTdlMjQ5N2YzOGVmMGNmOWFkNTM2YTFiOTUyNjRmYzY4OWNlZmM4OTk1ZA"
+);
+crearProducto(
+  "Salchichón Ibérico 200g",
+  "alimentos",
+  8,
+  25,
+  120,
+  "https://www.supermercadoseljamon.com/documents/10180/892067/11030468_G.jpg"
+);
+crearProducto(
+  "Chorizo Picante 250g",
+  "alimentos",
+  8,
+  25,
+  80,
+  "https://www.supermercadosplaza.es/documents/10180/10467/010516_G.jpg"
+);
+crearProducto(
+  "Mortadela Italiana 150g",
+  "alimentos",
+  8,
+  25,
+  70,
+  "https://sgfm.elcorteingles.es/SGFM/dctm/MEDIA03/202108/17/00118394300596____4__600x600.jpg"
+);
+crearProducto(
+  "Salami Tipo Milano 300g",
+  "alimentos",
+  8,
+  25,
+  110,
+  "https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00750222158020L.jpg"
+);
+crearProducto(
+  "Pastrami de Pavo 250g",
+  "alimentos",
+  8,
+  25,
+  95,
+  "https://jumbocolombiaio.vtexassets.com/arquivos/ids/184834-800-800?v=637813975764570000&width=800&height=800&aspect=true"
+);
+crearProducto(
+  "Helado de Vainilla 1L",
+  "alimentos",
+  8,
+  25,
+  100,
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFyrOj5H_gBlrGRB2K0LJrRKXjU77Kw3O6KQ&s"
+);
+crearProducto(
+  "Paleta de Mango y Chile",
+  "alimentos",
+  8,
+  25,
+  25,
+  "https://www.kokoeurope.pl/cdn/shop/files/ezgif.com-webp-to-jpg_1.jpg?v=1686635941"
+);
+crearProducto(
+  "Helado de Chocolate Amargo 500ml",
+  "alimentos",
+  8,
+  25,
+  120,
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEP0d9LDPcZiOwEtrU0NQFEwZGmCZFoviV-g&s"
+);
+crearProducto(
+  "Sundae de Fresa y Nata",
+  "alimentos",
+  8,
+  25,
+  80,
+  "https://www.laneveria.com.sv/wp-content/uploads/2017/04/WEB-LLEVAR-LITROFRESA.png"
+);
+crearProducto(
+  "Popsicle de Yogurt y Frutas",
+  "alimentos",
+  8,
+  25,
+  30,
+  "https://walmartcr.vtexassets.com/arquivos/ids/504834-500-auto?v=638415134387270000&width=500&height=auto&aspect=true"
+);
+crearProducto(
+  "Helado de Crema Irlandesa 750ml",
+  "alimentos",
+  8,
+  25,
+  150,
+  "https://www.conaprole.uy/wp-content/uploads/2018/12/97252-PolipapelCIrlandyChoc900ml-1-600x600.png"
+);
+crearProducto(
+  "Jabón Líquido Antibacterial 500ml",
+  "limpieza",
+  8,
+  25,
+  35,
+  "https://walmartni.vtexassets.com/arquivos/ids/370071/Jab-n-L-quido-Antibacterial-Protex-Avena-Prebi-tico-500-ml-2-9982.jpg?v=638451958286030000"
+);
+crearProducto(
+  "Shampoo Restauración Capilar 400ml",
+  "cuidado personal",
+  8,
+  25,
+  50,
+  "https://walmartni.vtexassets.com/arquivos/ids/379759/Shampoo-Pantene-Pro-V-Restauraci-n-400ml-1-8724.jpg?v=638478963195100000"
+);
+crearProducto(
+  "Papel Higiénico Ultra Suave (Pack 6 rollos)",
+  "limpieza",
+  8,
+  25,
+  60,
+  "https://m.media-amazon.com/images/I/71IklRSnYJL.jpg"
+);
+crearProducto(
+  "Leche Entera 1L",
+  "alimentos",
+  8,
+  25,
+  30,
+  "https://walmartni.vtexassets.com/arquivos/ids/287034/Leche-UHT-marca-Lala-Entera-1L-1-10968.jpg?v=638251727135970000"
+);
+crearProducto(
+  "Queso Parmesano 200g",
+  "alimentos",
+  8,
+  25,
+  150,
+  "https://jumbo.vtexassets.com/arquivos/ids/413970/Queso-parmesano-Gran-Reserva-trozo-200-g.jpg?v=637473108205700000"
+);
+crearProducto(
+  "Yogurt Natural 500g",
+  "alimentos",
+  8,
+  25,
+  45,
+  "https://walmartni.vtexassets.com/arquivos/ids/359686/Yogurt-bonlac-natural-500gr.jpg?v=638426169155430000"
+);
+crearProducto(
+  "Coca-Cola Zero 2.5L (2 Pack)",
+  "bebidas",
+  8,
+  25,
+  90,
+  "assets/proudco2.jpg"
+);
+crearProducto(
+  "Agua Mineral 500ml",
+  "bebidas",
+  8,
+  25,
+  10,
+  "https://www.ubuy.com.ni/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNzFDTk9NRExGQ0wuX1NMMTUwMF8uanBn.jpg"
+);
+crearProducto(
+  "Desodorante Roll-On Fresh 50ml",
+  "cuidado personal",
+  8,
+  25,
+  25,
+  "https://images.ctfassets.net/njdrd936eipt/2wrognCD0GPuv5O2Zk3NsK/08917c0bc32157ddb0fc64569d7ed210/roll-on-antitranspirante-FRESH.png?fm=webp&w=480&q=75"
+);
 
 // // Leer todos los productos del inventario
 // console.log(leerProductos());
@@ -729,7 +959,9 @@ function abrirModificarProducto(IdInventario) {
       "modifyProductImageDisplay"
     );
     const modifyProductName = document.getElementById("modifyProductName");
-    const modifyProductCategory = document.getElementById("modifyProductCategory");
+    const modifyProductCategory = document.getElementById(
+      "modifyProductCategory"
+    );
     const modifyProductQuantity = document.getElementById(
       "modifyProductQuantity"
     );
@@ -790,8 +1022,9 @@ if (updateProductButton) {
     const modifyProductId = document.getElementById("modifyProductId").value;
     const modifyProductName =
       document.getElementById("modifyProductName").value;
-      const modifyProductCategory =
-      document.getElementById("modifyProductCategory2").value;
+    const modifyProductCategory = document.getElementById(
+      "modifyProductCategory2"
+    ).value;
     const modifyProductQuantity = document.getElementById(
       "modifyProductQuantity"
     ).value;
@@ -823,34 +1056,33 @@ if (updateProductButton) {
   });
 }
 
-
 //barra de busqueda
 
-const searchBarP = document.getElementById('searchBarP');
-const searchBarC = document.getElementById('searchBarC');
+const searchBarP = document.getElementById("searchBarP");
+const searchBarC = document.getElementById("searchBarC");
 
 //inventario
 // Evento para manejar la búsqueda
-searchBarP.addEventListener('input', function() {
-    const searchText = searchBarP.value.trim().toLowerCase();
-    if (searchText === "") {
-        generateProductItems(inventario);
-    } else {
-        // Filtrar productos basados en la búsqueda en inventario
-        const filteredProducts = inventario.filter(producto =>
-            producto.NombreInventario.toLowerCase().includes(searchText)
-        );
-        generateProductItems(filteredProducts);
-    }
+searchBarP.addEventListener("input", function () {
+  const searchText = searchBarP.value.trim().toLowerCase();
+  if (searchText === "") {
+    generateProductItems(inventario);
+  } else {
+    // Filtrar productos basados en la búsqueda en inventario
+    const filteredProducts = inventario.filter((producto) =>
+      producto.NombreInventario.toLowerCase().includes(searchText)
+    );
+    generateProductItems(filteredProducts);
+  }
 });
 
 // Función para generar elementos de producto en el DOM
 function generateProductItems(products) {
-    productList.innerHTML = '';
-    products.forEach(producto => {
-        const productItem = document.createElement('div');
-        productItem.classList.add('product-item');
-        productItem.innerHTML = `
+  productList.innerHTML = "";
+  products.forEach((producto) => {
+    const productItem = document.createElement("div");
+    productItem.classList.add("product-item");
+    productItem.innerHTML = `
             <div class="product-details">
                 <img src="${producto.ImagenInventario}" alt="${producto.NombreInventario}">
                 <span class="product-name">${producto.NombreInventario}</span>
@@ -868,34 +1100,33 @@ function generateProductItems(products) {
                 </button>
             </div>
         `;
-        productList.appendChild(productItem);
-    });
-    updateProductCount();
+    productList.appendChild(productItem);
+  });
+  updateProductCount();
 }
-
 
 //categorias
 // Evento para manejar la búsqueda
-searchBarC.addEventListener('input', function() {
-    const searchText = searchBarC.value.trim().toLowerCase();
-    if (searchText === "") {
-      generateCategoryItems(categorias);
-    } else {
-      // Filtrar categorías basadas en la búsqueda en categorias
-      const filteredCategories = categorias.filter(categoria =>
-        categoria.NombreCategoria.toLowerCase().includes(searchText)
-      );
-      generateCategoryItems(filteredCategories);
-    }
-  });
+searchBarC.addEventListener("input", function () {
+  const searchText = searchBarC.value.trim().toLowerCase();
+  if (searchText === "") {
+    generateCategoryItems(categorias);
+  } else {
+    // Filtrar categorías basadas en la búsqueda en categorias
+    const filteredCategories = categorias.filter((categoria) =>
+      categoria.NombreCategoria.toLowerCase().includes(searchText)
+    );
+    generateCategoryItems(filteredCategories);
+  }
+});
 
 // Función para generar elementos de categoría en el DOM
 function generateCategoryItems(categories) {
-    categoryList.innerHTML = '';
-    categories.forEach(categoria => {
-      const categoryItem = document.createElement('div');
-      categoryItem.classList.add('category-item');
-      categoryItem.innerHTML = `
+  categoryList.innerHTML = "";
+  categories.forEach((categoria) => {
+    const categoryItem = document.createElement("div");
+    categoryItem.classList.add("category-item");
+    categoryItem.innerHTML = `
         <div class="product-details">
           <img src="${categoria.ImagenCategoria}" alt="${categoria.NombreCategoria}">
           <span class="product-name">${categoria.NombreCategoria}</span>
@@ -909,37 +1140,36 @@ function generateCategoryItems(categories) {
           </button>
         </div>
       `;
-      categoryList.appendChild(categoryItem);
-    });
-    updateCategoryCount();
-    llenarSelectCategorias();
-  }
+    categoryList.appendChild(categoryItem);
+  });
+  updateCategoryCount();
+  llenarSelectCategorias();
+}
 
-
-  //categoria en productos
+//categoria en productos
 
 // Función para llenar el select con las categorías disponibles
 function llenarSelectCategorias() {
-    const select = document.getElementById('modifyProductCategory');
-    const select2 = document.getElementById('modifyProductCategory2');
-    
-    // Limpiar opciones actuales del select
-    select.innerHTML = '';
-    select2.innerHTML = '';
+  const select = document.getElementById("modifyProductCategory");
+  const select2 = document.getElementById("modifyProductCategory2");
 
-    // Agregar una opción por cada categoría
-    categorias.forEach(categoria => {
-        const option = document.createElement('option');
-        option.value = categoria.NombreCategoria;   
-        option.textContent = categoria.NombreCategoria;
-        select.appendChild(option);
-    });
+  // Limpiar opciones actuales del select
+  select.innerHTML = "";
+  select2.innerHTML = "";
 
-    // Agregar una opción por cada categoría
-    categorias.forEach(categoria => {
-        const option = document.createElement('option');
-        option.value = categoria.NombreCategoria;   
-        option.textContent = categoria.NombreCategoria;
-        select2.appendChild(option);
-    });
+  // Agregar una opción por cada categoría
+  categorias.forEach((categoria) => {
+    const option = document.createElement("option");
+    option.value = categoria.NombreCategoria;
+    option.textContent = categoria.NombreCategoria;
+    select.appendChild(option);
+  });
+
+  // Agregar una opción por cada categoría
+  categorias.forEach((categoria) => {
+    const option = document.createElement("option");
+    option.value = categoria.NombreCategoria;
+    option.textContent = categoria.NombreCategoria;
+    select2.appendChild(option);
+  });
 }
