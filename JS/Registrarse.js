@@ -71,7 +71,14 @@ document.getElementById('loginForm')?.addEventListener('submit', function(event)
         
         alert('Inicio de sesión como administrador exitoso.');
         localStorage.setItem('currentUser',usuario);
-        window.location.href = 'index.html';
+        if(localStorage.getItem('LoginVer' === 1))
+            {
+                window.location.href = 'index.html';
+            }
+            else
+            {
+                window.history.back();
+            }
         return;
     }
 
@@ -82,7 +89,14 @@ document.getElementById('loginForm')?.addEventListener('submit', function(event)
         alert('Inicio de sesión exitoso.');
         localStorage.setItem('currentUser',usuario);
        
-        window.location.href = 'index.html';
+        if(localStorage.getItem('LoginVer' === 1))
+        {
+            window.location.href = 'index.html';
+        }
+        else
+        {
+            window.history.back();
+        }
     } else {
         alert('Usuario o contraseña incorrectos.');
     }

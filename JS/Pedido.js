@@ -34,6 +34,15 @@ productoTotal.innerHTML = 'C$' + total;
     return true;
 }
 
+document.getElementById('mostrarMapa').addEventListener('click', function(event) {
+    const mapa = document.getElementById('mapa');
+    if (mapa.style.display === 'none') {
+        mapa.style.display = 'block';
+    } else {
+        mapa.style.display = 'none';
+    }
+});
+
 // Evento click para el botón de Realizar Pago
 document.getElementById('realizar-pago').addEventListener('click', function(event) {
     if (validarFormulario()) {

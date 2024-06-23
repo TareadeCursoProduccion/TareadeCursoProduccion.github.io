@@ -7,7 +7,131 @@
     <link rel="stylesheet" href="CSS/Pedido.css">
     <script src="JS/Pedido.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Función para abrir Google Maps
+        function abrirGoogleMaps() {
+          // Abre Google Maps en una nueva ventana o pestaña
+          window.open('https://www.google.com/maps');
+        }
+      
+        // Obtener referencia al botón y al textarea
+        const botonUbicar = document.getElementById('ubicar');
+        const textareaDireccion = document.getElementById('direccion');
+      
+        // Escuchar el evento click en el botón
+        botonUbicar.addEventListener('click', function() {
+          // Abrir Google Maps cuando se hace clic en el botón
+          abrirGoogleMaps();
+        });
+      
+        // Función para manejar la ubicación seleccionada de Google Maps
+        function recibirUbicacion(ubicacion) {
+          // Colocar la ubicación seleccionada en el textarea
+          textareaDireccion.value = ubicacion;
+        }
+      </script>
+      
 </head>
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+<!-- Leaflet JavaScript -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- Estilos CSS para el mapa y controles -->
+<style>
+  #mapa {
+    height: 400px; /* Altura deseada para el mapa */
+  }
+
+  #direccion {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    resize: vertical; /* Permite redimensionar verticalmente */
+  }
+</style>
+ <!-- Incluye Leaflet JavaScript -->
+ <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Coordenadas iniciales y nivel de zoom
+      var latitudInicial = 12.1292223;
+      var longitudInicial = -86.2517181;
+      var zoomInicial = 13;
+  
+      // Inicializar el mapa de Leaflet
+      var mapa = L.map('mapa').setView([latitudInicial, longitudInicial], zoomInicial);
+  
+      // Añadir capa de OpenStreetMap
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(mapa);
+  
+      // Manejar el clic en el mapa para obtener las coordenadas
+      mapa.on('click', function(e) {
+        var latitud = e.latlng.lat.toFixed(6); // Redondear latitud a 6 decimales
+        var longitud = e.latlng.lng.toFixed(6); // Redondear longitud a 6 decimales
+        document.getElementById('address').value = latitud + ', ' + longitud;
+      });
+    });
+
+    
+        // Función para validar el número de tarjeta usando el algoritmo de Luhn
+        function validarTarjeta(numeroTarjeta) {
+            // Eliminar espacios en blanco del número de tarjeta
+            var tarjetaSinEspacios = numeroTarjeta.replace(/\s/g, '');
+            
+            // Revertir la cadena y convertirla en array
+            var numeros = tarjetaSinEspacios.split('').reverse();
+
+            // Sumar los dígitos y aplicar el algoritmo de Luhn
+            var suma = 0;
+            for (var i = 0; i < numeros.length; i++) {
+                var num = parseInt(numeros[i]);
+
+                if (i % 2 !== 0) {
+                    num *= 2;
+                    if (num > 9) {
+                        num -= 9;
+                    }
+                }
+
+                suma += num;
+            }
+
+            return suma % 10 === 0;
+        }
+
+        // Obtener referencias a los campos del formulario
+        var form = document.getElementById('payment-form');
+        var cardNumberInput = document.getElementById('card-number');
+        var expiryMonthSelect = document.getElementById('expiry-month');
+        var expiryYearSelect = document.getElementById('expiry-year');
+        var cvvInput = document.getElementById('cvv');
+
+        // Escuchar el evento submit del formulario
+        form.addEventListener('submit', function(event) {
+            // Validar el número de tarjeta antes de enviar el formulario
+            if (!validarTarjeta(cardNumberInput.value)) {
+                alert('El número de tarjeta ingresado es inválido.');
+                event.preventDefault(); // Evitar que el formulario se envíe
+            }
+        });
+
+        // Limpiar caracteres no numéricos del número de tarjeta mientras se escribe
+        cardNumberInput.addEventListener('input', function(event) {
+            this.value = this.value.replace(/\D/g, '');
+        });
+
+        // Limpiar caracteres no numéricos del CVV mientras se escribe
+        cvvInput.addEventListener('input', function(event) {
+            this.value = this.value.replace(/\D/g, '');
+        });
+  </script>
+  
 <body>
     <header>
         <img src="assets/image0.png" alt="Mini Market Logo">
@@ -83,7 +207,9 @@
                 </div>
 
                 <label for="address">Dirección de Envío</label>
-                <input type="text" id="address" placeholder="Dirección de Envío">
+                <textarea  class = "addressDir" id="address" name="direccion" rows="4" cols="50" placeholder="Escribe tu dirección aquí..."></textarea>
+                <button type="button" class="mostrarMap" id="mostrarMapa" >Mapa</button>
+                <div id="mapa" style="display: none;margin-top: 30px;"></div>
             </form>
         </section>
         <section class="summary">
@@ -111,6 +237,7 @@
     </main>
 </body>
 </html>
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var cvvInput = document.getElementById('cvv');

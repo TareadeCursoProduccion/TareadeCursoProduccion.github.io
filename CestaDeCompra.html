@@ -25,11 +25,18 @@
             </div>
             <h1 class="ml-[55px]">Cesta de Compra</h1>
             <div class="search-bar">
-                <input type="text" placeholder="Buscar...">
+                <input type="text" id = "cestaSearchBar" placeholder="Buscar...">
             </div>
         </header>
         <main>
             <h2>Estas llevando:</h2>
+            <div class="header-row" style="height: 52px;">
+                <span style="margin-left: 120px;font-weight: bold;" id="productCount">Producto</span>
+                  <span style="margin-left: 300px;font-weight: bold;">Cantidad</span>
+                  <span style="margin-left: 205px;line-height: 1.2;font-weight: bold;" >Precio Unitario</span>
+                  <span style="margin-right: 0px;margin-left: 190px;font-weight: bold;">Precio Total</span>
+                
+                </div>
             <div id="cart-items-container">
                 <!-- Los elementos del carrito se añadirán aquí dinámicamente -->
             </div>
@@ -39,8 +46,7 @@
                 <span>Subtotal:</span>
                 <span id="subtotal-amount">$0</span>
             </div>
-            <button class="continue-btn" id = "ContinueCesta" onclick="window.location.href='Pedido.html'"
->
+            <button class="continue-btn" id = "ContinueCesta" >
                 Continuar
                 
             </button>

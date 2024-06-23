@@ -46,7 +46,7 @@ main {
 
 
 
-.billing-info, .summary {
+.billing-info {
     width: 45%;
     background-color: #fff;
     padding: 20px;
@@ -54,6 +54,14 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.summary {
+    height: 500px;
+    width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 .billing-info h2, .summary h2 {
     margin-bottom: 20px;
     font-size: 1.2em;
@@ -78,6 +86,13 @@ main {
     border-radius: 5px;
 }
 
+.addressDir {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 .card-details {
     display: flex;
     justify-content: space-between;
@@ -116,7 +131,16 @@ button.realizarPagoButton {
     cursor: pointer;
 }
 
-
+button.mostrarMap {
+    width: 25%;
+    padding: 15px;
+    background-color: #f0ad4e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
 button.realizarPagoButton:hover {
     background-color: #ec971f;
 }

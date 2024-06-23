@@ -54,7 +54,12 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
        
-       
+        loginLink.addEventListener('click', function() {
+            localStorage('LoginVer',1);
+        });
+        registerLink.addEventListener('click', function() {
+            localStorage('LoginVer',1);
+        });
     const promosData = {
         "alimentos": [
             {

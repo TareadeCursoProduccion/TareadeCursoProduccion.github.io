@@ -34,7 +34,19 @@
 <div class="main-content">
     <!-- Contenedor de Inventario -->
      <div id="dashboardSection">
-      <p>hola</p>
+      <table id="tabla-productos" border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Las filas de productos se agregarán aquí -->
+        </tbody>
+    </table>
      </div>
 
     <div id="inventorySection" style="display: none;">
@@ -43,11 +55,11 @@
           <input type="text" id="searchBarP" placeholder="Buscar" />
         </div>
         <div class="header-row">
-          <span id="productCount">0 Productos</span>
-            <span>Categoria</span>
-            <span>Cantidad</span>
-            <span>Coste</span>
-            <span>Precio</span>
+          <span style="margin-left: -50px;" id="productCount">0 Productos</span>
+            <span style="margin-right: -160px; margin-left: 60px;">Categoria</span>
+            <span style="margin-left: 80px;" >Cantidad</span>
+            <span style="margin-right: -10px;margin-left: -10px;">Coste</span>
+            <span style="margin-right: 70px;">Precio</span>
           </div>
         <div class="product-list">
           <div class="product-list" id="productList">
@@ -66,15 +78,15 @@
       <div class="modal-body">
         <img src="assets/Image placeholder.png" alt="Agregar Imagen" id="productImageDisplay" />
         <canvas id="productCanvas" style="display: none"></canvas>
-        <input type="file" id="productFileInput" accept="image/*" />
+        <input type="file" id="productFileInput" accept="image/*" / required>
         <label for="productFileInput" class="custom-file-upload">Agregar Imagen</label>
         <input type="text" placeholder="nombreProducto" id="productNameInput" />
-        <select id="modifyProductCategory" name="categoriaProducto">
+        <select id="modifyProductCategory" name="categoriaProducto" required>
           <!-- Options will be dynamically added here -->
       </select>
-        <input type="number" placeholder="cantidad" id="productQuantityInput" />
-        <input type="number" placeholder="costo" id="productCostInput" />
-        <input type="number" placeholder="precio" id="productPriceInput" />
+        <input type="number" placeholder="cantidad" id="productQuantityInput" required/>
+        <input type="number" placeholder="costo" id="productCostInput" required/>
+        <input type="number" placeholder="precio" id="productPriceInput" required/>
       </div>
       <div class="modal-footer">
         <button class="create-product-button"><i class="fas fa-plus"></i> Crear Producto</button>
