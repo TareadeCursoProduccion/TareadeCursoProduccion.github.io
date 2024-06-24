@@ -51,12 +51,20 @@ function displayInventarios(categoria) {
   }
 }
 
+let myChart; // Variable global para almacenar la instancia de Chart
+
 function generateChart() {
   const ctx = document.getElementById('categoryChart');
   if (!ctx) {
     console.error('Elemento con id "categoryChart" no encontrado.');
     return;
   }
+  
+  // Destruir la gráfica existente si hay una
+  if (myChart) {
+    myChart.destroy();
+  }
+
   const context = ctx.getContext('2d');
   const categoryCounts = categorias.map(categoria => {
     return inventario.filter(item => item.CategoriaInventario.toLowerCase() === categoria.NombreCategoria.toLowerCase()).length;
@@ -64,7 +72,7 @@ function generateChart() {
 
   console.log('Datos de la gráfica:', categoryCounts);
 
-  new Chart(context, {
+  myChart = new Chart(context, {
     type: 'bar',
     data: {
       labels: categorias.map(categoria => categoria.NombreCategoria),
@@ -87,7 +95,6 @@ function generateChart() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('Documento cargado y listo.');
   displayCategorias();
   generateChart();
 });
@@ -225,6 +232,8 @@ function inicializarModal() {
     crearCategoria(generarIdUnico(), nombreCategoria, imagenCategoria);
     updateCategoryCount();
     llenarSelectCategorias();
+    displayCategorias();
+    generateChart();
 
     // Cerrar el modal
     modal.style.display = "none";
@@ -278,6 +287,8 @@ alert('Datos insuficientes, porfavor complete los campos e intentelo denuevo');
           imagenProducto
         );
         updateProductCount();
+        displayCategorias();
+        generateChart();
     
         // Cerrar el modal
         createProductModal.style.display = "none";
@@ -430,6 +441,8 @@ function confirmarEliminarCategoria(IdCategoria) {
     eliminarCategoria(IdCategoria);
     updateCategoryCount();
     llenarSelectCategorias();
+    displayCategorias();
+    generateChart();
   }
 }
 
@@ -694,6 +707,8 @@ function confirmarEliminarProducto(IdInventario) {
   if (confirmar) {
     eliminarProducto(IdInventario);
     updateProductCount();
+    displayCategorias();
+    generateChart();
   }
 }
 
@@ -1211,6 +1226,8 @@ function generateProductItems(products) {
     productList.appendChild(productItem);
   });
   updateProductCount();
+  displayCategorias();
+  generateChart();
 }
 
 //categorias
@@ -1252,6 +1269,8 @@ function generateCategoryItems(categories) {
   });
   updateCategoryCount();
   llenarSelectCategorias();
+  displayCategorias();
+  generateChart();
 }
 
 //categoria en productos
