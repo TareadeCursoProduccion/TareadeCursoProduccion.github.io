@@ -408,8 +408,8 @@ crearCategoria(2, "Bebidas", "assets/Bebidas icon.png");
 crearCategoria(3, "Embutidos", "assets/Embutidos icon.png");
 crearCategoria(4, "Helados", "assets/Helados icon.png");
 crearCategoria(5, "Higiene", "assets/higiene icon.png");
-crearCategoria(6, "Lacteos", "assets/lacteos icon.png");
-crearCategoria(7, "Limpieza", "assets/limpieza icon.png");
+crearCategoria(6, "Lacteos", "assets/Lacteos icon.png");
+crearCategoria(7, "Limpieza", "assets/Limpieza icon.png");
 
 // // Leer todas las categorías
 // console.log(leerCategorias());
