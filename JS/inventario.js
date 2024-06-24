@@ -536,7 +536,9 @@ if (updateButton) {
       modifyCategoryName,
       modifyCategoryImage
     );
+    llenarSelectCategorias();
     generateChart();
+    displayCategorias();
     if (updated) {
       cerrarModificarCategoriaModal();
       imgDisplay.src = "assets/Image placeholder.png";
