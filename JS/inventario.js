@@ -1,3 +1,99 @@
+
+
+
+// dashboard
+function displayCategorias() {
+  const categoriaContainer = document.getElementById('categoria-buttons');
+  if (!categoriaContainer) {
+    console.error('Elemento con id "categoria-buttons" no encontrado.');
+    return;
+  }
+  categoriaContainer.innerHTML = ''; // Limpiar el contenido previo
+  categorias.forEach(categoria => {
+    const button = document.createElement('button');
+    button.classList.add('button');
+    button.innerText = categoria.NombreCategoria;
+    button.onclick = () => {
+      console.log(`Botón de categoría "${categoria.NombreCategoria}" clicado.`);
+      displayInventarios(categoria.NombreCategoria);
+    };
+    categoriaContainer.appendChild(button);
+  });
+}
+
+function displayInventarios(categoria) {
+  const inventarioContainer = document.getElementById('inventario-items');
+  if (!inventarioContainer) {
+    console.error('Elemento con id "inventario-items" no encontrado.');
+    return;
+  }
+  inventarioContainer.innerHTML = ''; // Limpiar el contenido previo
+  const items = inventario.filter(item => {
+    console.log(`Comparando ${item.CategoriaInventario.toLowerCase()} con ${categoria.toLowerCase()}`);
+    return item.CategoriaInventario.toLowerCase() === categoria.toLowerCase();
+  });
+  if (items.length === 0) {
+    inventarioContainer.innerHTML = '<p>No hay productos en esta categoría.</p>';
+  } else {
+    items.forEach(inventario => {
+      const itemDiv = document.createElement('div');
+      itemDiv.classList.add('item');
+      itemDiv.innerHTML = `
+        <img src="${inventario.ImagenInventario}" alt="${inventario.NombreInventario}">
+        <h3>${inventario.NombreInventario}</h3>
+        <p>Categoría: ${inventario.CategoriaInventario}</p>
+        <p>Cantidad: ${inventario.CantidadInventario}</p>
+        <p>Coste: $${inventario.CosteInventario}</p>
+        <p>Precio: $${inventario.PrecioInventario}</p>
+      `;
+      inventarioContainer.appendChild(itemDiv);
+    });
+  }
+}
+
+function generateChart() {
+  const ctx = document.getElementById('categoryChart');
+  if (!ctx) {
+    console.error('Elemento con id "categoryChart" no encontrado.');
+    return;
+  }
+  const context = ctx.getContext('2d');
+  const categoryCounts = categorias.map(categoria => {
+    return inventario.filter(item => item.CategoriaInventario.toLowerCase() === categoria.NombreCategoria.toLowerCase()).length;
+  });
+
+  console.log('Datos de la gráfica:', categoryCounts);
+
+  new Chart(context, {
+    type: 'bar',
+    data: {
+      labels: categorias.map(categoria => categoria.NombreCategoria),
+      datasets: [{
+        label: 'Cantidad de Productos',
+        data: categoryCounts,
+        backgroundColor: ['#007bff', '#6c757d', '#28a745', '#dc3545', '#ffc107', '#17a2b8'],
+        borderColor: ['#0056b3', '#5a6268', '#218838', '#c82333', '#e0a800', '#138496'],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('Documento cargado y listo.');
+  displayCategorias();
+  generateChart();
+});
+
+//otro
+
 document
   .getElementById("categoryButton")
   .addEventListener("click", function () {
@@ -21,73 +117,8 @@ document
    document.getElementById("dashboardSection").style.display = "block";
    document.getElementById("inventorySection").style.display = "none";
    document.getElementById("categorySection").style.display = "none";
-
-   // Llenar la tabla del dashboard con los productos por categorías
-   populateDashboardTable();
 });
 
-  
-
-// Función para llenar la tabla del dashboard
-function populateDashboardTable() {
-  // Asumiendo que tienes una estructura de datos para los productos
-
-    // Definir el arreglo de productos
-    const productos = [
-      { id: 1, nombre: "Arroz Blanco 1kg", categoria: "alimentos", cantidad: 50 },
-      { id: 2, nombre: "Frijoles Rojos 560g", categoria: "alimentos", cantidad: 45 },
-      { id: 3, nombre: "Aceite de Cocina 1L", categoria: "alimentos", cantidad: 70 },
-      { id: 4, nombre: "Harina de Maíz Precocida 1kg", categoria: "alimentos", cantidad: 55 },
-      { id: 5, nombre: "Aceitunas Verdes Rellenas 250g", categoria: "alimentos", cantidad: 60 },
-      { id: 6, nombre: "Pasta de Trigo Integral 500g", categoria: "alimentos", cantidad: 40 },
-      { id: 7, nombre: "Agua Mineral Natural 1.5L", categoria: "alimentos", cantidad: 20 },
-      { id: 8, nombre: "Refresco de Cola 2L", categoria: "alimentos", cantidad: 30 },
-      { id: 9, nombre: "Jugo de Naranja 1L", categoria: "alimentos", cantidad: 40 },
-      { id: 10, nombre: "Cerveza Artesanal 500ml", categoria: "alimentos", cantidad: 60 },
-      { id: 11, nombre: "Café Colombiano Tostado 250g", categoria: "alimentos", cantidad: 55 },
-      { id: 12, nombre: "Té Verde Orgánico 100 bolsitas", categoria: "alimentos", cantidad: 35 },
-      { id: 13, nombre: "Jamón Serrano 100g", categoria: "alimentos", cantidad: 90 },
-      { id: 14, nombre: "Salchichón Ibérico 200g", categoria: "alimentos", cantidad: 120 },
-      { id: 15, nombre: "Chorizo Picante 250g", categoria: "alimentos", cantidad: 80 },
-      { id: 16, nombre: "Mortadela Italiana 150g", categoria: "alimentos", cantidad: 70 },
-      { id: 17, nombre: "Salami Tipo Milano 300g", categoria: "alimentos", cantidad: 110 },
-      { id: 18, nombre: "Pastrami de Pavo 250g", categoria: "alimentos", cantidad: 95 },
-      { id: 19, nombre: "Helado de Vainilla 1L", categoria: "alimentos", cantidad: 100 },
-      { id: 20, nombre: "Paleta de Mango y Chile", categoria: "alimentos", cantidad: 25 },
-      { id: 21, nombre: "Helado de Chocolate Amargo 500ml", categoria: "alimentos", cantidad: 120 },
-      { id: 22, nombre: "Sundae de Fresa y Nata", categoria: "alimentos", cantidad: 80 },
-      { id: 23, nombre: "Popsicle de Yogurt y Frutas", categoria: "alimentos", cantidad: 30 },
-      { id: 24, nombre: "Helado de Crema Irlandesa 750ml", categoria: "alimentos", cantidad: 150 },
-      { id: 25, nombre: "Jabón Líquido Antibacterial 500ml", categoria: "limpieza", cantidad: 35 },
-      { id: 26, nombre: "Shampoo Restauración Capilar 400ml", categoria: "cuidado personal", cantidad: 50 },
-      { id: 27, nombre: "Papel Higiénico Ultra Suave (Pack 6 rollos)", categoria: "limpieza", cantidad: 60 },
-      { id: 28, nombre: "Leche Entera 1L", categoria: "alimentos", cantidad: 30 },
-      { id: 29, nombre: "Queso Parmesano 200g", categoria: "alimentos", cantidad: 150 },
-      { id: 30, nombre: "Yogurt Natural 500g", categoria: "alimentos", cantidad: 45 },
-      { id: 31, nombre: "Coca-Cola Zero 2.5L (2 Pack)", categoria: "bebidas", cantidad: 90 },
-      { id: 32, nombre: "Agua Mineral 500ml", categoria: "bebidas", cantidad: 10 },
-      { id: 33, nombre: "Desodorante Roll-On Fresh 50ml", categoria: "cuidado personal", cantidad: 25 }
-  ];
-
-  // Función para crear filas de productos en la tabla
-  function crearFilaProducto(producto) {
-      const tabla = document.getElementById("tabla-productos").getElementsByTagName('tbody')[0];
-      const nuevaFila = tabla.insertRow();
-
-      const celdaId = nuevaFila.insertCell();
-      const celdaNombre = nuevaFila.insertCell();
-      const celdaCategoria = nuevaFila.insertCell();
-      const celdaCantidad = nuevaFila.insertCell();
-
-      celdaId.innerText = producto.id;
-      celdaNombre.innerText = producto.nombre;
-      celdaCategoria.innerText = producto.categoria;
-      celdaCantidad.innerText = producto.cantidad;
-  }
-
-  // Llenar la tabla con productos al cargar la página
-  productos.forEach(crearFilaProducto);
-}
 //agregar imagen en categoria
 
 document
