@@ -848,7 +848,7 @@ crearProducto(
 );
 crearProducto(
   "Refresco de Cola 2L",
-  "alimentos",
+  "bebidas",
   8,
   25,
   30,
@@ -856,7 +856,7 @@ crearProducto(
 );
 crearProducto(
   "Jugo de Naranja 1L",
-  "alimentos",
+  "bebidas",
   8,
   25,
   40,
@@ -864,7 +864,7 @@ crearProducto(
 );
 crearProducto(
   "Cerveza Artesanal 500ml",
-  "alimentos",
+  "bebidas",
   8,
   25,
   60,
@@ -888,7 +888,7 @@ crearProducto(
 );
 crearProducto(
   "Jamón Serrano 100g",
-  "alimentos",
+  "embutidos",
   8,
   25,
   90,
@@ -896,7 +896,7 @@ crearProducto(
 );
 crearProducto(
   "Salchichón Ibérico 200g",
-  "alimentos",
+  "embutidos",
   8,
   25,
   120,
@@ -904,7 +904,7 @@ crearProducto(
 );
 crearProducto(
   "Chorizo Picante 250g",
-  "alimentos",
+  "embutidos",
   8,
   25,
   80,
@@ -912,7 +912,7 @@ crearProducto(
 );
 crearProducto(
   "Mortadela Italiana 150g",
-  "alimentos",
+  "embutidos",
   8,
   25,
   70,
@@ -920,7 +920,7 @@ crearProducto(
 );
 crearProducto(
   "Salami Tipo Milano 300g",
-  "alimentos",
+  "embutidos",
   8,
   25,
   110,
@@ -928,7 +928,7 @@ crearProducto(
 );
 crearProducto(
   "Pastrami de Pavo 250g",
-  "alimentos",
+  "embutidos",
   8,
   25,
   95,
@@ -936,7 +936,7 @@ crearProducto(
 );
 crearProducto(
   "Helado de Vainilla 1L",
-  "alimentos",
+  "helados",
   8,
   25,
   100,
@@ -944,7 +944,7 @@ crearProducto(
 );
 crearProducto(
   "Paleta de Mango y Chile",
-  "alimentos",
+  "helados",
   8,
   25,
   25,
@@ -952,7 +952,7 @@ crearProducto(
 );
 crearProducto(
   "Helado de Chocolate Amargo 500ml",
-  "alimentos",
+  "helados",
   8,
   25,
   120,
@@ -960,23 +960,16 @@ crearProducto(
 );
 crearProducto(
   "Sundae de Fresa y Nata",
-  "alimentos",
+  "helados",
   8,
   25,
   80,
   "https://www.laneveria.com.sv/wp-content/uploads/2017/04/WEB-LLEVAR-LITROFRESA.png"
 );
-crearProducto(
-  "Popsicle de Yogurt y Frutas",
-  "alimentos",
-  8,
-  25,
-  30,
-  "https://walmartcr.vtexassets.com/arquivos/ids/504834-500-auto?v=638415134387270000&width=500&height=auto&aspect=true"
-);
+
 crearProducto(
   "Helado de Crema Irlandesa 750ml",
-  "alimentos",
+  "helados",
   8,
   25,
   150,
@@ -992,7 +985,7 @@ crearProducto(
 );
 crearProducto(
   "Shampoo Restauración Capilar 400ml",
-  "cuidado personal",
+  "higiene",
   8,
   25,
   50,
@@ -1000,7 +993,7 @@ crearProducto(
 );
 crearProducto(
   "Papel Higiénico Ultra Suave (Pack 6 rollos)",
-  "limpieza",
+  "higiene",
   8,
   25,
   60,
@@ -1008,7 +1001,7 @@ crearProducto(
 );
 crearProducto(
   "Leche Entera 1L",
-  "alimentos",
+  "lacteos",
   8,
   25,
   30,
@@ -1016,7 +1009,7 @@ crearProducto(
 );
 crearProducto(
   "Queso Parmesano 200g",
-  "alimentos",
+  "lacteos",
   8,
   25,
   150,
@@ -1024,7 +1017,7 @@ crearProducto(
 );
 crearProducto(
   "Yogurt Natural 500g",
-  "alimentos",
+  "lacteos",
   8,
   25,
   45,
@@ -1048,7 +1041,7 @@ crearProducto(
 );
 crearProducto(
   "Desodorante Roll-On Fresh 50ml",
-  "cuidado personal",
+  "higiene",
   8,
   25,
   25,
