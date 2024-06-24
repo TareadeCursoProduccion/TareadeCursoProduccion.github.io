@@ -117,73 +117,7 @@ document
    document.getElementById("dashboardSection").style.display = "block";
    document.getElementById("inventorySection").style.display = "none";
    document.getElementById("categorySection").style.display = "none";
-
-   // Llenar la tabla del dashboard con los productos por categorías
-  //  populateDashboardTable();
 });
-
-  
-
-// // Función para llenar la tabla del dashboard
-// function populateDashboardTable() {
-//   // Asumiendo que tienes una estructura de datos para los productos
-
-//     // Definir el arreglo de productos
-//     const productos = [
-//       { id: 1, nombre: "Arroz Blanco 1kg", categoria: "alimentos", cantidad: 50 },
-//       { id: 2, nombre: "Frijoles Rojos 560g", categoria: "alimentos", cantidad: 45 },
-//       { id: 3, nombre: "Aceite de Cocina 1L", categoria: "alimentos", cantidad: 70 },
-//       { id: 4, nombre: "Harina de Maíz Precocida 1kg", categoria: "alimentos", cantidad: 55 },
-//       { id: 5, nombre: "Aceitunas Verdes Rellenas 250g", categoria: "alimentos", cantidad: 60 },
-//       { id: 6, nombre: "Pasta de Trigo Integral 500g", categoria: "alimentos", cantidad: 40 },
-//       { id: 7, nombre: "Agua Mineral Natural 1.5L", categoria: "alimentos", cantidad: 20 },
-//       { id: 8, nombre: "Refresco de Cola 2L", categoria: "alimentos", cantidad: 30 },
-//       { id: 9, nombre: "Jugo de Naranja 1L", categoria: "alimentos", cantidad: 40 },
-//       { id: 10, nombre: "Cerveza Artesanal 500ml", categoria: "alimentos", cantidad: 60 },
-//       { id: 11, nombre: "Café Colombiano Tostado 250g", categoria: "alimentos", cantidad: 55 },
-//       { id: 12, nombre: "Té Verde Orgánico 100 bolsitas", categoria: "alimentos", cantidad: 35 },
-//       { id: 13, nombre: "Jamón Serrano 100g", categoria: "alimentos", cantidad: 90 },
-//       { id: 14, nombre: "Salchichón Ibérico 200g", categoria: "alimentos", cantidad: 120 },
-//       { id: 15, nombre: "Chorizo Picante 250g", categoria: "alimentos", cantidad: 80 },
-//       { id: 16, nombre: "Mortadela Italiana 150g", categoria: "alimentos", cantidad: 70 },
-//       { id: 17, nombre: "Salami Tipo Milano 300g", categoria: "alimentos", cantidad: 110 },
-//       { id: 18, nombre: "Pastrami de Pavo 250g", categoria: "alimentos", cantidad: 95 },
-//       { id: 19, nombre: "Helado de Vainilla 1L", categoria: "alimentos", cantidad: 100 },
-//       { id: 20, nombre: "Paleta de Mango y Chile", categoria: "alimentos", cantidad: 25 },
-//       { id: 21, nombre: "Helado de Chocolate Amargo 500ml", categoria: "alimentos", cantidad: 120 },
-//       { id: 22, nombre: "Sundae de Fresa y Nata", categoria: "alimentos", cantidad: 80 },
-//       { id: 23, nombre: "Popsicle de Yogurt y Frutas", categoria: "alimentos", cantidad: 30 },
-//       { id: 24, nombre: "Helado de Crema Irlandesa 750ml", categoria: "alimentos", cantidad: 150 },
-//       { id: 25, nombre: "Jabón Líquido Antibacterial 500ml", categoria: "limpieza", cantidad: 35 },
-//       { id: 26, nombre: "Shampoo Restauración Capilar 400ml", categoria: "cuidado personal", cantidad: 50 },
-//       { id: 27, nombre: "Papel Higiénico Ultra Suave (Pack 6 rollos)", categoria: "limpieza", cantidad: 60 },
-//       { id: 28, nombre: "Leche Entera 1L", categoria: "alimentos", cantidad: 30 },
-//       { id: 29, nombre: "Queso Parmesano 200g", categoria: "alimentos", cantidad: 150 },
-//       { id: 30, nombre: "Yogurt Natural 500g", categoria: "alimentos", cantidad: 45 },
-//       { id: 31, nombre: "Coca-Cola Zero 2.5L (2 Pack)", categoria: "bebidas", cantidad: 90 },
-//       { id: 32, nombre: "Agua Mineral 500ml", categoria: "bebidas", cantidad: 10 },
-//       { id: 33, nombre: "Desodorante Roll-On Fresh 50ml", categoria: "cuidado personal", cantidad: 25 }
-//   ];
-
-//   // Función para crear filas de productos en la tabla
-//   function crearFilaProducto(producto) {
-//       const tabla = document.getElementById("tabla-productos").getElementsByTagName('tbody')[0];
-//       const nuevaFila = tabla.insertRow();
-
-//       const celdaId = nuevaFila.insertCell();
-//       const celdaNombre = nuevaFila.insertCell();
-//       const celdaCategoria = nuevaFila.insertCell();
-//       const celdaCantidad = nuevaFila.insertCell();
-
-//       celdaId.innerText = producto.id;
-//       celdaNombre.innerText = producto.nombre;
-//       celdaCategoria.innerText = producto.categoria;
-//       celdaCantidad.innerText = producto.cantidad;
-//   }
-
-//   // Llenar la tabla con productos al cargar la página
-//   productos.forEach(crearFilaProducto);
-// }
 
 //agregar imagen en categoria
 
