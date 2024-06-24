@@ -536,6 +536,7 @@ if (updateButton) {
       modifyCategoryName,
       modifyCategoryImage
     );
+    generateChart();
     if (updated) {
       cerrarModificarCategoriaModal();
       imgDisplay.src = "assets/Image placeholder.png";
@@ -1163,6 +1164,7 @@ if (updateProductButton) {
       modifyProductPrice,
       modifyProductImage
     );
+    generateChart();
     if (updated) {
       cerrarModificarProductoModal();
       imgDisplay.src = "assets/Image placeholder.png";
