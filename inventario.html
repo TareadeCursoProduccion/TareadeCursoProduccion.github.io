@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Inventario y Categorías</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="CSS/Inventario.css" />
+  <link rel="stylesheet" href="CSS/Inventario.css"/>
+  <link rel="stylesheet" href="CSS/Dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <div class="sidebar">
@@ -34,7 +36,7 @@
 <div class="main-content">
     <!-- Contenedor de Inventario -->
      <div id="dashboardSection">
-      <table id="tabla-productos" border="1">
+      <!-- <table id="tabla-productos" border="1">
         <thead>
             <tr>
                 <th>ID</th>
@@ -44,9 +46,25 @@
             </tr>
         </thead>
         <tbody>
-            <!-- Las filas de productos se agregarán aquí -->
+            Las filas de productos se agregarán aquí
         </tbody>
-    </table>
+      </table> -->
+      <div class="container">
+        <h1>Dashboard de Inventario y Categorías</h1>
+        <div class="section" id="grafica">
+          <h2>Gráfica de Productos por Categoría</h2>
+          <canvas id="categoryChart"></canvas>
+        </div>
+        <div class="section" id="categorias">
+          <h2>Categorías</h2>
+          <div class="buttons" id="categoria-buttons"></div>
+        </div>
+        <div class="section" id="inventarios">
+          <h2>Productos por Categoría</h2>
+          <div class="items" id="inventario-items"></div>
+        </div>
+      </div>
+
      </div>
 
     <div id="inventorySection" style="display: none;">
