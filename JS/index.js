@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const perfilButton = document.querySelector('.profile-button');
+    const perfilButton = document.getElementById('profileButton');
     const usuarioInput = localStorage.getItem('currentUser');
     const loginLink = document.getElementById('loginLink');
     const registerLink = document.getElementById('registerLink');
@@ -18,8 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const categoriesContainer = document.querySelector(".categories-container");
     const buttons = document.querySelectorAll(".round-button");
 
-    window.location.reload(true);
-
+    
     if(usuarioInput)
         {
             perfilButton.innerHTML = usuarioInput;
