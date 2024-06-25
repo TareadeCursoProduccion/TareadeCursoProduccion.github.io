@@ -17,8 +17,8 @@
         <aside class="sidebar">
             <div class="profile">
                 <!-- <img src="assets/Dieri.png" alt="Foto de perfil"> -->
-                <h2>Dierish Rojas Corrales</h2>
-                <p>pokemondarc@yahoo.es</p>
+                <h2 id="nombreUsuario"></h2>
+                <p id="correoUsuario"></p>
                 <button id="inicio" onclick="window.location.href='index.html'">Inicio</button>
             </div>
         </aside>
@@ -55,7 +55,7 @@
                 <!-- <p style="margin-top: 30px;">Número de celular</p>
                 <p>+50587316341</p> -->
                 <p class="emailgris" style="margin-top: 30px;">E-mail</p>
-                <p class="emailgris">pokemondarc@yahoo.es</p>
+                <p class="emailgris" id="emailgris"></p>
             </div>
             <section id="personal-info-form-section" class="hidden">
                 <div class="back-button-container">
@@ -67,10 +67,10 @@
                 <form id="personal-info-form">
                     <div class="form-group">
                         <label for="first-name">¿Cómo te llamás?</label>
-                        <input type="text" id="first-name" name="first-name" placeholder="Nombre (s)" value="Dierish">
+                        <input type="text" id="first-name" name="first-name" placeholder="Nombre (s)" >
                     </div>
                     <div class="form-group">
-                        <input type="text" id="last-name" name="last-name" placeholder="Apellido (s)" value="Rojas Corrales">
+                        <input type="text" id="last-name" name="last-name" placeholder="Apellido (s)" >
                     </div>
                     <div class="form-group">
                         <label for="text">Usuario</label>

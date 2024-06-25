@@ -1,6 +1,3 @@
-
-
-
 document.getElementById('loginForm')?.addEventListener('submit', function(event) {
     event.preventDefault(); 
 
@@ -25,11 +22,12 @@ document.getElementById('loginForm')?.addEventListener('submit', function(event)
 
     const userInfo = JSON.parse(localStorage.getItem(usuario));
 
-    if (userInfo && userInfo.password === password) {
+    const newPassword =  localStorage.getItem('currentPassword');
+    if (userInfo && newPassword === password) {
         
         alert('Inicio de sesión exitoso.');
         localStorage.setItem('currentUser',usuario);
-       
+        localStorage.setItem('currentPassword',password);
         if(localStorage.getItem('LoginVer') === '1')
         {
             window.location.href = 'index.html';

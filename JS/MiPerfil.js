@@ -9,6 +9,20 @@ document.getElementById('personal-info-btn').addEventListener('click', function(
     }
 });
 
+let form = document.getElementById('personal-info-form');
+form.querySelector('#first-name').value = localStorage.getItem('nombreUser');
+form.querySelector('#last-name').value = localStorage.getItem('apellidosUser');
+form.querySelector('#username').value = localStorage.getItem('currentUser');
+form.querySelector('#password').value = localStorage.getItem('currentPassword');
+form.querySelector('#phoneNumber').value = localStorage.getItem('currentPhone');
+
+document.getElementById('nombreUsuario').innerHTML = localStorage.getItem('nombreUser') + " " +localStorage.getItem('apellidosUser');
+document.getElementById('correoUsuario').innerHTML = localStorage.getItem('emailUser');
+localStorage.getItem('apellidosUser');
+const email = document.getElementById('emailgris');
+email.innerHTML = localStorage.getItem('emailUser');
+
+
 document.getElementById('personal-data-btn').addEventListener('click', function() {
     var personalInfoSection = document.getElementById('personal-info');
     var personalInfoFormSection = document.getElementById('personal-info-form-section');
@@ -35,11 +49,20 @@ document.getElementById('back-to-personal-info').addEventListener('click', funct
 
 document.getElementById('personal-info-form').addEventListener('submit', function(event) {
     event.preventDefault();
-    alert('Cambios guardados');
+
+    localStorage.setItem('nombreUser',form.querySelector('#first-name').value); 
+    localStorage.setItem('apellidosUser', form.querySelector('#last-name').value); 
+    localStorage.setItem('currentUser', form.querySelector('#username').value); 
+    localStorage.setItem('currentPassword', form.querySelector('#password').value); 
+    localStorage.setItem('currentPhone', form.querySelector('#phoneNumber').value); 
     
+
+    alert('Cambios guardados');
+    window.location.reload(true); 
     var accountSection = document.querySelector('.account-section');
     var personalInfoFormSection = document.getElementById('personal-info-form-section');
 
+    i
     personalInfoFormSection.classList.add('hidden');
     accountSection.classList.remove('hidden');
 });

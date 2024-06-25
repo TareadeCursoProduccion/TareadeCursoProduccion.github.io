@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const usuario = document.getElementById('usuario').value.trim();
         const password = document.getElementById('password').value;
     
+        localStorage.setItem('nombreUser', nombre);
+        localStorage.setItem('apellidosUser', apellidos);
+        localStorage.setItem('emailUser', email);
         if (password.length < 8) {
             alert('La contraseña debe tener al menos 8 caracteres.');
             return;
@@ -18,10 +21,31 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
     
+        function isValidJSON(str) {
+            try {
+                JSON.parse(str);
+            } catch (e) {
+                return false;
+            }
+            return true;
+        }
+        
+        // Encuentra el usuario existente basado en el email
         const existingUser = Object.keys(localStorage).find(key => {
-            const userInfo = JSON.parse(localStorage.getItem(key));
-            return userInfo.email === email;
+            const item = localStorage.getItem(key);
+            if (isValidJSON(item)) {
+                const userInfo = JSON.parse(item);
+                return userInfo.email === email;
+            }
+            return false;
         });
+        
+        localStorage.setItem('currentPassword',password);
+        if (existingUser) {
+            console.log("Usuario existente:", existingUser);
+        } else {
+            console.log("Usuario no encontrado");
+        }
     
         if (existingUser) {
             alert('El correo electrónico ya está registrado con otra cuenta. Por favor, utilice otro correo electrónico.');

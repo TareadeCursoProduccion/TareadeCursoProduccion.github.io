@@ -53,6 +53,11 @@ body {
     margin-top: 15px;
 }
 
+header
+{
+    position: fixed;
+    width: 100%;
+}
 .back-button svg {
     width: 35px;
     height: 35px;
@@ -67,6 +72,7 @@ body {
     background-color: #FFD589;
     width: 70px;
     height: 100vh;
+    margin-top: 80px;
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -77,6 +83,10 @@ body {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+}
+#dashboardSection, #inventorySection, #categorySection
+{
+    margin-top: 100px;
 }
 
 #dashboardTable th, #dashboardTable td {
