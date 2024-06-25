@@ -43,10 +43,68 @@ document.getElementById('mostrarMapa').addEventListener('click', function(event)
     }
 });
 
+
+var verification = 0;
+var cvvInput = document.getElementById('cvv');
+var cardNumberInput = document.getElementById('card-number');
+
+cvvInput.addEventListener('input', function(event) {
+    this.value = this.value.replace(/\D/g, '');
+});
+
+cardNumberInput.addEventListener('keyup', (e) => {
+const logoMarca = document.getElementById('logo-marca');   
+    let valorInput = e.target.value;
+
+cardNumberInput.value = valorInput
+// Eliminamos espacios en blanco
+.replace(/\s/g, '')
+// Eliminar las letras
+.replace(/\D/g, '')
+// Ponemos espacio cada cuatro numeros
+.replace(/([0-9]{4})/g, '$1 ')
+// Elimina el ultimo espaciado
+.trim();
+
+
+
+if(valorInput == ''){
+
+    verification = 0;
+logoMarca.innerHTML = '';
+}
+
+if(valorInput[0] == 4){
+logoMarca.innerHTML = '';
+const imagen = document.createElement('img');
+imagen.src = 'assets/visa.png';
+imagen.style.boxShadow = "5px 5px 10px rgba(0, 0, 0, 0.3)";
+imagen.style.backgroundColor = "#828079";
+verification = 1;
+logoMarca.appendChild(imagen);
+} else if(valorInput[0] == 5){
+logoMarca.innerHTML = '';
+const imagen = document.createElement('img');
+imagen.src = 'assets/mastercard.png';
+imagen.style.boxShadow = "5px 5px 10px rgba(0, 0, 0, 0.3)";
+verification = 1;
+logoMarca.appendChild(imagen);
+}
+
+  
+});
+
 // Evento click para el botón de Realizar Pago
 document.getElementById('realizar-pago').addEventListener('click', function(event) {
     if (validarFormulario()) {
-        window.location.href = 'EstadoPedido.html';
+        if(verification === 1)
+        {
+            window.location.href = 'EstadoPedido.html';
+        }
+        else
+        {
+            alert("Tarjeta no valida! Porfavor ingrese una tarjeta de credito valida.");
+        }
     } else {
         event.preventDefault(); // Previene la redirección si el formulario no es válido
     }

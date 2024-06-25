@@ -152,8 +152,10 @@
                 <input type="email" id="email" placeholder="Email">
                 
                 <label for="card-number">Número de tarjeta</label>
-                <input type="text" id="card-number" placeholder="•••• •••• •••• 9770">
-                
+                <input style = "width: 400px;"type="text" id="card-number"placeholder="•••• •••• •••• 9770" maxlength="19" autocomplete="off">
+                <div class="logo-marca" id="logo-marca" style="display: inline-block;vertical-align: middle; margin-left: 10px;">
+					<!-- <img src="img/logos/visa.png" alt=""> -->
+				</div>
                 <div class="card-details">
                     <div>
                         <label for="expiry-date">Fecha de expiración</label>
@@ -202,7 +204,7 @@
                     </div>
                     <div>
                         <label for="cvv">CVV</label>
-                        <input type="text" id="cvv" placeholder="732" pattern="[0-9]{3}" title="Ingrese un CVV válido de 3 dígitos">
+                        <input type="text" id="cvv" maxlength="3" placeholder="732" pattern="[0-9]{3}" title="Ingrese un CVV válido de 3 dígitos">
                     </div>
                 </div>
 
@@ -240,15 +242,9 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        var cvvInput = document.getElementById('cvv');
-        var cardNumberInput = document.getElementById('card-number');
-
-        cvvInput.addEventListener('input', function(event) {
-            this.value = this.value.replace(/\D/g, '');
-        });
-
-        cardNumberInput.addEventListener('input', function(event) {
-            this.value = this.value.replace(/\D/g, '');
-        });
+      
+        
     });
+
+    
 </script>

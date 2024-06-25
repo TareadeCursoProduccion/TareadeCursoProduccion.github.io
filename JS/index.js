@@ -361,28 +361,32 @@ document.addEventListener("DOMContentLoaded", function() {
             imgSrc: "assets/proudco2.jpg",
             title: "Coca-Cola Zero 2.5L (2 Pack)",
             description: "¡Duplica el sabor sin las calorías con nuestro pack especial de 2 botellas de 2.5 litros de Coca-Cola Zero!",
-            price: "C$90.00"
+            price: "C$90.00",
+            oldprice: "C$130.00"
         },
         {
             id: 'p02',
             imgSrc: "assets/image 1.png",
             title: "Jumex Variedad Frutas (2x1)",
             description: "Aprovecha nuestra promoción 2x1 en Jumex variedad frutas y lleva el doble de sabor refrescante a casa con cada botella!",
-            price: "C$60.00"
+            price: "C$60.00",
+            oldprice: "C$90.00"
         },
         {
             id: 'p03',
             imgSrc: "assets/producto 3.png",
             title: "Cereales Kellogg's (3x2)",
             description: "¡Desayuna con más variedad y ahorro con nuestra oferta especial 3x2 en cereales Kellogg's!",
-            price: "C$850.00"
+            price: "C$850.00",
+            oldprice: "C$1050.00"
         },
         {
             id: 'p04',
             imgSrc: "assets/image 3.png",
             title: "Helado Cremissimo 1L + Palomitas ACT II 80g",
             description: "Satisfacción en cada bocado! Helado Cremissimo 1L + Palomitas ACT II 80g de cortesía.",
-            price: "C$190.00"
+            price: "C$190.00",
+            oldprice: "C$230.00"
         }
     ];
 
@@ -391,11 +395,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
    botonCesta.addEventListener('click', function() {
 
-let cestaIDs = JSON.stringify(carritoIds);
+if(cantidadCesta.textContent.trim() === "0")
+{
+    alert("No se puede pasar a cesta si esta vacia!");
+}
+else
+{
+    let cestaIDs = JSON.stringify(carritoIds);
 
-// Almacenar en localStorage
-localStorage.setItem('cestaIDs', cestaIDs);    
-   });
+    // Almacenar en localStorage
+    localStorage.setItem('cestaIDs', cestaIDs);    
+
+     window.location.href = "CestaDeCompra.html";
+       }
+}
+);
    function generatePromoItems(items) {
     promocionesContainer.innerHTML = "";
     items.forEach(item => {
@@ -417,8 +431,28 @@ localStorage.setItem('cestaIDs', cestaIDs);
         description.style.overflow = "hidden";
         description.style.textOverflow = "ellipsis";
         description.style.lineHeight = "1.8em"
+
+        const container = document.createElement("div");
+        container.style.display = "flex";
+        container.style.alignItems = "flex-start"; // Alinear elementos en la parte superior
+
+
         const price = document.createElement("p");
         price.innerHTML = `<strong>${item.price}</strong>`;
+        
+        const oldPriceElement = document.createElement("p");
+        if(item.oldprice !== null  && item.oldprice !== undefined) {
+           
+            oldPriceElement.innerHTML = `<span style="font-size: 4rem; margin-top:-50px">${item.oldprice}</span>`;
+
+            price.style.marginLeft = "20px";
+            oldPriceElement.style.marginLeft = "20px";
+            oldPriceElement.style.fontWeight = "lighter";
+            oldPriceElement.style.textDecoration = "line-through";
+            // Aquí debes agregar oldPriceElement al DOM, por ejemplo:
+            // Suponiendo que "container" es el elemento donde quieres añadir el párrafo:
+            // container.appendChild(oldPriceElement);
+        }
         
         const button = document.createElement("button");
         button.textContent = carritoIds.includes(item.id) ? "Agregado" : "Añadir al carrito";
@@ -446,9 +480,15 @@ localStorage.setItem('cestaIDs', cestaIDs);
         promoItemDiv.appendChild(img);
         promoItemDiv.appendChild(title);
         promoItemDiv.appendChild(description);
-        promoItemDiv.appendChild(price);
+        container.appendChild(price);
+        if(item.oldprice !== null  && item.oldprice !== undefined) {
+           
+            oldPriceElement.innerHTML = `<strong>${item.oldprice}</strong>`;
+            container.appendChild(oldPriceElement);
+        }
+        promoItemDiv.appendChild(container);
         promoItemDiv.appendChild(button);
-
+        
         promocionesContainer.appendChild(promoItemDiv);
     });
 }
