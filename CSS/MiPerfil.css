@@ -184,25 +184,6 @@ body {
     box-sizing: border-box;
 }
 
-.gender-options {
-    display: flex;
-    gap: 10px;
-}
-
-.gender-btn {
-    padding: 10px 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s;
-}
-
-.gender-btn.selected {
-    background-color: #FFD589;
-    border-color: #FFD589;
-}
-
 .save-button {
     width: 100%;
     padding: 15px;
