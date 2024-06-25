@@ -49,11 +49,11 @@
                 </div>
                 <button id="personal-data-btn" class="info-button">
                     Mis datos personales
-                    <span>Nombre, fecha de nacimiento y género</span>
+                    <span>Nombre, usuario, contraseña y telefono</span>
                 </button>
                 
-                <p style="margin-top: 30px;">Número de celular</p>
-                <p>+50587316341</p>
+                <!-- <p style="margin-top: 30px;">Número de celular</p>
+                <p>+50587316341</p> -->
                 <p class="emailgris" style="margin-top: 30px;">E-mail</p>
                 <p class="emailgris">pokemondarc@yahoo.es</p>
             </div>
@@ -73,20 +73,16 @@
                         <input type="text" id="last-name" name="last-name" placeholder="Apellido (s)" value="Rojas Corrales">
                     </div>
                     <div class="form-group">
-                        <input type="text" id="nickname" name="nickname" placeholder="Apodo (opcional)">
+                        <label for="text">Usuario</label>
+                        <input type="text" id="username" name="username" placeholder="Usuario">
                     </div>
                     <div class="form-group">
-                        <label for="birthdate">¿Cuándo naciste?</label>
-                        <input type="text" id="birthdate" name="birthdate" placeholder="DD/MM/AAAA" value="12/10/2004">
+                        <label for="text">Contraseña</label>
+                        <input type="text" id="password" name="password" placeholder="contraseña">
                     </div>
                     <div class="form-group">
-                        <label>¿Con qué género te identificás?</label>
-                        <div class="gender-options">
-                            <button type="button" class="gender-btn" id="gender-female">Femenino</button>
-                            <button type="button" class="gender-btn selected" id="gender-male">Masculino</button>
-                            <button type="button" class="gender-btn" id="gender-nonbinary">No binario</button>
-                            <button type="button" class="gender-btn" id="gender-prefer-not-say">Prefiero no decirlo</button>
-                        </div>
+                        <label for="text">Telefono</label>
+                        <input type="text" id="phoneNumber" name="phoneNumber" placeholder="+505XXXXXXXX">
                     </div>
                     <button type="submit" class="save-button">Guardar cambios</button>
                 </form>
