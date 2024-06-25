@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const categoriesContainer = document.querySelector(".categories-container");
     const buttons = document.querySelectorAll(".round-button");
 
-   
+   window.reload();
 
     if(usuarioInput)
         {
