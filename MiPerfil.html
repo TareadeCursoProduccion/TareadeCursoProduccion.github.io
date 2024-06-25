@@ -9,9 +9,9 @@
 <body>
     <header class="header-principal">
         <div class="logo">
-            <img src="assets/image0.png" id = 'logo' alt="Mini-Markett Logo">
+            <img src="assets/image0.png" id='logo' alt="Mini-Markett Logo">
             <h1>Mini-Markett</h1>
-
+        </div>
     </header>
     <div class="container">
         <aside class="sidebar">
@@ -19,8 +19,7 @@
                 <img src="assets/Dieri.png" alt="Foto de perfil">
                 <h2>Dierish Rojas Corrales</h2>
                 <p>pokemondarc@yahoo.es</p>
-
-                <button id="inicio">Inicio</button>
+                <button id="inicio" onclick="window.location.href='index.html'">Inicio</button>
             </div>
         </aside>
         <main class="content">
@@ -29,7 +28,7 @@
                 <div class="buttons">
                     <div class="section">
                         <span>Perfil</span>
-                        <button id="personal-info">Información personal</button>
+                        <button id="personal-info-btn">Información personal</button>
                     </div>
                     <div class="section">
                         <span>Soporte</span>
@@ -37,11 +36,63 @@
                         <button id="privacy">Políticas de privacidad</button>
                     </div>
                     <div class="section">
-                        <button id="logout">Cerrar sesión</button> 
+                        <button id="logout">Cerrar sesión</button>
                     </div>
                 </div>
             </section>
+            <div id="personal-info" class="hidden">
+                <div class="back-button-container">
+                    <button class="back-button" id="back-to-account">
+                        <svg class="w-[35px] h-[35px]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <h2>Información personal</h2>
+                </div>
+                <button id="personal-data-btn" class="info-button">
+                    Mis datos personales
+                    <span>Nombre, fecha de nacimiento y género</span>
+                </button>
+                
+                <p style="margin-top: 30px;">Número de celular</p>
+                <p>+50587316341</p>
+                <p class="emailgris" style="margin-top: 30px;">E-mail</p>
+                <p class="emailgris">pokemondarc@yahoo.es</p>
+            </div>
+            <section id="personal-info-form-section" class="hidden">
+                <div class="back-button-container">
+                    <button class="back-button" id="back-to-personal-info">
+                        <svg class="w-[35px] h-[35px]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <h2>Mis datos personales</h2>
+                </div>
+                <form id="personal-info-form">
+                    <div class="form-group">
+                        <label for="first-name">¿Cómo te llamás?</label>
+                        <input type="text" id="first-name" name="first-name" placeholder="Nombre (s)" value="Dierish">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="last-name" name="last-name" placeholder="Apellido (s)" value="Rojas Corrales">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="nickname" name="nickname" placeholder="Apodo (opcional)">
+                    </div>
+                    <div class="form-group">
+                        <label for="birthdate">¿Cuándo naciste?</label>
+                        <input type="text" id="birthdate" name="birthdate" placeholder="DD/MM/AAAA" value="12/10/2004">
+                    </div>
+                    <div class="form-group">
+                        <label>¿Con qué género te identificás?</label>
+                        <div class="gender-options">
+                            <button type="button" class="gender-btn" id="gender-female">Femenino</button>
+                            <button type="button" class="gender-btn selected" id="gender-male">Masculino</button>
+                            <button type="button" class="gender-btn" id="gender-nonbinary">No binario</button>
+                            <button type="button" class="gender-btn" id="gender-prefer-not-say">Prefiero no decirlo</button>
+                        </div>
+                    </div>
+                    <button type="submit" class="save-button">Guardar cambios</button>
+                </form>
+            </section>
         </main>
     </div>
+    <script src="JS/MiPerfil.js"></script>
 </body>
 </html>

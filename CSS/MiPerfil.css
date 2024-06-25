@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column; /* Cambiado para columna */
+    flex-direction: column;
     min-height: 100vh;
     background-color: #f6f6f6;
 }
@@ -24,14 +24,14 @@ body {
 .header-principal .logo img {
     width: 80px;
     height: 80px;
-    margin-bottom: 10px; /* Ajustar margen */
+    margin-bottom: 10px;
 }
 
 .header-principal h1 {
     font-size: 32px;
     font-weight: 700;
     margin: 0;
-    margin-left:8px;
+    margin-left: 8px;
 }
 
 .container {
@@ -41,9 +41,9 @@ body {
 
 .sidebar {
     width: 250px;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
     padding: 20px;
     box-sizing: border-box;
+    margin-left: 90px;
 }
 
 .sidebar .profile {
@@ -53,6 +53,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 10px;
     background-color: #fff;
+    margin-left: -80px;
 }
 
 .sidebar .profile img {
@@ -119,7 +120,7 @@ body {
     margin-bottom: 10px;
 }
 
-.buttons button {
+.buttons button, .info-button {
     padding: 15px;
     border: 1px solid #ccc;
     background-color: #fff;
@@ -131,16 +132,152 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-right: 40rem;
+    margin-right: 25rem;
 }
 
-.buttons button:hover {
+.buttons button:hover, .info-button:hover {
     background-color: #f0f0f0;
     border-color: #bbb;
 }
 
-.buttons button::after {
+.buttons button::after, .info-button::after {
     content: '>';
     font-size: 16px;
     color: #666;
+}
+
+.hidden {
+    display: none;
+}
+
+#personal-info, #personal-info-form-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-right: 25rem;
+}
+
+#personal-info h2, #personal-info-form-section h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.gender-options {
+    display: flex;
+    gap: 10px;
+}
+
+.gender-btn {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.gender-btn.selected {
+    background-color: #FFD589;
+    border-color: #FFD589;
+}
+
+.save-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FF69B4;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.save-button:hover {
+    background-color: #FF1493;
+}
+
+.back-button-container {
+    display: flex;
+    align-items: center; /* Alinea verticalmente los elementos */
+    gap: 10px; /* Espacio entre el ícono y el texto */
+    margin-bottom: 20px; /* Espacio inferior opcional */
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.back-button svg {
+    width: 35px;
+    height: 35px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.back-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+/* Estilo para el botón personal-data-btn */
+#personal-data-btn {
+    padding: 15px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s, border-color 0.3s;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ajusta el ancho según tus necesidades */
+}
+
+#personal-data-btn:hover {
+    background-color: #f0f0f0;
+    border-color: #bbb;
+}
+
+#personal-data-btn span, .emailgris {
+    color: #666;
+    font-size: 14px;
 }
