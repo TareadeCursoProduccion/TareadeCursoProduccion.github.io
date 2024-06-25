@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const registerLink = document.getElementById('registerLink');
     const logoutLink = document.getElementById('logoutLink');
     const adminLink = document.getElementById('AdminLink');
+    const profileLink = document.getElementById('ProfileLink');
     const imagesas = document.getElementById('logo');
     const searchBar = document.querySelector('.search-bar input');
     const roundButton2 = document.querySelector('.round-button2');
@@ -24,10 +25,12 @@ document.addEventListener("DOMContentLoaded", function() {
             perfilButton.innerHTML = usuarioInput;
             loginLink.style.display = 'none';
             registerLink.style.display = 'none';
+            profileLink.style.display = 'block';
             logoutLink.style.display = 'block';
             if(perfilButton.innerHTML === 'Admin')
             {
                 adminLink.style.display = 'block';
+                profileLink.style.display = 'none';
             }
             
             //imagesas.src = localStorage.getItem('profileImage');
@@ -37,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
             perfilButton.innerHTML = "Mi Perfil";
             loginLink.style.display = 'block';
             registerLink.style.display = 'block';
+            profileLink.style.display = 'none';
             logoutLink.style.display = 'none';
             adminLink.style.display = 'none';
         }
@@ -48,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 perfilButton.innerHTML = "Mi Perfil";
                 loginLink.style.display = 'block';
                 registerLink.style.display = 'block';
+                profileLink.style.display = 'none';
                 logoutLink.style.display = 'none';
                 adminLink.style.display = 'none';
                 location.reload();
