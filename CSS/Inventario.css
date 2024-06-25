@@ -5,6 +5,64 @@ body {
     background-color: #f9f9f9;
 }
 
+.header-principal {
+    display: flex;
+    align-items: center;
+    background-color: #FFD589;
+    padding: 4px 20px;
+}
+
+.header-principal .logo {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-left: 25px;
+}
+
+.header-principal .logo img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.header-principal h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+    margin-left: 8px;
+}
+
+.back-button-container {
+    display: flex;
+    align-items: center; /* Alinea verticalmente los elementos */
+    gap: 10px; /* Espacio entre el ícono y el texto */
+    margin-bottom: 20px; /* Espacio inferior opcional */
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+}
+
+.back-button svg {
+    width: 35px;
+    height: 35px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
 .sidebar {
     background-color: #FFD589;
     width: 70px;
