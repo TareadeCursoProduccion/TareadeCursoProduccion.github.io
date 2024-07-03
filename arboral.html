@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrama Arboral con Mermaid</title>
+    <link rel="stylesheet" href="CSS/Arboral.css">
+</head>
+<body>
+    <h1>Diagrama Arboral de Productos y Componentes</h1>
+    <div class="form-section">
+        <h2>Agregar Producto Principal</h2>
+        <form id="product-form">
+            <label for="product-name">Nombre del Producto:</label>
+            <input type="text" id="product-name" required>
+            <button type="submit">Agregar Producto</button>
+            <label for="product-units">Unidades del Producto:</label>
+            <input type="number" id="product-units" required min="1">
+        </form>
+    </div>
+    <div class="form-section">
+        <h2>Agregar Componente</h2>
+        <form id="component-form">
+            <div id="parent-fields">
+                <div class="form-group">
+                    <label for="parent-select-0">Seleccionar Producto o Componente Principal:</label>
+                    <select id="parent-select-0" required></select>
+                    <label for="units-0">Unidades:</label>
+                    <input type="number" id="units-0" required min="1">
+                </div>
+            </div>
+            <button type="button" id="add-parent" style="display: none;">Agregar Nuevo Componente Principal</button>
+            <div class="form-group">
+                <label for="component-option">Opción de Componente:</label>
+                <select id="component-option">
+                    <option value="new">Nombre del Componente:</option>
+                    <option value="existing">Seleccionar Componente Existente:</option>
+                </select>
+            </div>
+            <div class="form-group" id="new-component-group">
+                <label for="component-name">Nombre del Componente:</label>
+                <input type="text" id="component-name">
+            </div>
+            <div class="form-group" id="existing-component-group" style="display: none;">
+                <label for="existing-component-select">Seleccionar Componente Existente:</label>
+                <select id="existing-component-select"></select>
+            </div>
+            <button type="submit">Agregar Componente</button>
+        </form>
+    </div>
+    <div class="form-section">
+        <h2>Calcular Resultados</h2>
+        <button id="test-button" type="button">Calcular Resultados</button>
+        <div id="resultsas"></div>
+    </div>
+    <div id="diagram" class="mermaid"></div>
+    
+    <script type="module">
+        import { calcularResultadoTodos } from './JS/Arboral.js';
+
+        document.getElementById('test-button').addEventListener('click', () => {
+            const multiplier = parseInt(document.getElementById('product-units').value, 10);
+            if (multiplier > 0) {
+                calcularResultadoTodos(multiplier);
+            } else {
+                alert('El multiplicador debe ser un número mayor que 0.');
+            }
+        });
+    </script>
+</body>
+</html>

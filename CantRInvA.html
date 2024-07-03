@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calcular Cantidad de Recipientes</title>
+  <link rel="stylesheet" href="CSS/CantRIvnA.css">
+</head>
+<body>
+  <div id="square">
+    <h1>Cantidad de Recipientes y Inventario Máximo</h1>
+    <form id="calculationForm">
+      <label for="demandRate">Tasa de demanda</label>
+      <input type="number" id="demandRate" name="demandRate" step="any" required><br>
+      <label for="cycleTime">Tiempo de vuelta de recipientes (Minutos)</label>
+      <input type="number" id="cycleTime" name="cycleTime" step="any" required><br>
+      <label for="containerSize">Tamaño del recipiente</label>
+      <input type="number" id="containerSize" name="containerSize" step="any" required><br>
+      <button type="submit">Calcular</button>
+    </form>
+    <div id="results">
+      <p id="containerResult"></p>
+      <p id="containerFormula" class="formula"></p>
+      <p id="inventoryResult"></p>
+      <p id="inventoryFormula" class="formula"></p>
+    </div>
+  </div>
+  <script src="JS/CantRInvA.js"></script>
+</body>
+</html>

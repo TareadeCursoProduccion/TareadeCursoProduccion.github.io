@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventario Cero</title>
+  <link rel="stylesheet" href="CSS/InventarioCero.css">
+</head>
+<body>
+  <div id="square">
+    <h1>Inventario Cero</h1>
+    <form id="initial-form">
+      <div class="field">
+        <label for="PPT">Producción por trabajador (unidades por día):</label>
+        <input type="number" id="PPT" name="PPT" step="any" required>
+      </div>
+      <div class="field">
+        <label for="CDTH">Costo de trabajador por hora:</label>
+        <input type="number" id="CDTH" name="CDTH" step="any" required>
+      </div>
+      <div class="field">
+        <label for="OAI">Operarios actuales iniciales:</label>
+        <input type="number" id="OAI" name="OAI" step="any" required>
+      </div>
+      <div class="field">
+        <label for="CDT">Costo de despido por trabajador:</label>
+        <input type="number" id="CDT" name="CDT" step="any" required>
+      </div>
+      <div class="field">
+        <label for="CCT">Costo de contratación por trabajador:</label>
+        <input type="number" id="CCT" name="CCT" step="any" required>
+      </div>
+      <div class="field">
+        <label for="MESES">Número de meses:</label>
+        <input type="number" id="MESES" name="MESES" step="any" required>
+      </div>
+      <button type="submit">Siguiente</button>
+    </form>
+
+    <form id="monthly-form" style="display: none;">
+      <div id="monthly-inputs"></div>
+      <button type="submit">Calcular</button>
+    </form>
+    
+  </div>
+  <div id="result" style="display: none;">
+    <table>
+      <thead>
+        <tr>
+          <th>Mes</th>
+          <th>Producción</th>
+          <th>Contrataciones</th>
+          <th>Despidos</th>
+          <th>Costo Total</th>
+        </tr>
+      </thead>
+      <tbody id="resultTableBody"></tbody>
+    </table>
+  </div>
+  <script src="JS/InventarioCero.js"></script>
+</body>
+</html>

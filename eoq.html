@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EOQ Calculator</title>
+    <link rel="stylesheet" href="CSS/eoq.css">
+</head>
+<body>
+    <div id="square">
+        <h1>EOQ</h1>
+        <form id="eoqForm">
+            <label style="margin-left: -160px;"for="demand">Demanda diaria (D):</label>
+            <input type="number" id="demand" step="any" required><br>
+            <label style="margin-left: -140px;" for="orderCost">Costos del pedido (S):</label>
+            <input type="number" id="orderCost" step="any" required><br>
+            <label style="margin-left: -80px;" for="holdingCost">Costos de mantenimiento (H):</label>
+            <input type="number" id="holdingCost" step="any" required><br>
+            <button type="button" onclick="calculateEOQ()">Calcular EOQ</button>
+        </form>
+    </div>
+    <div id="result"></div>
+
+    <script src = JS/eoq.js></script>
+</body>
+</html>

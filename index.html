@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice de Métodos de Cálculo</title>
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <button onclick="loadContent('CMCorrectivo.html')"><i class="fas fa-tools"></i><span>Costo de Mantenimiento Correctivo</span></button>
+        <button onclick="loadContent('eoq.html')"><i class="fas fa-box"></i><span>EOQ</span></button>
+        <button onclick="loadContent('ControlInventario.html')"><i class="fas fa-warehouse"></i><span>Control de Inventario y la Cadena de Suministro</span></button>
+        <button onclick="loadContent('arboral.html')"><i class="fas fa-tree"></i><span>Arboral</span></button>
+        <button onclick="loadContent('LUCyLTC.html')"><i class="fas fa-list-alt"></i><span>LUC y LTC</span></button>
+        <button onclick="loadContent('CantRInvA.html')"><i class="fas fa-cube"></i><span>Cantidad de recipientes e inventario acumulado</span></button>
+        <button onclick="loadContent('kanban.html')"><i class="fas fa-tasks"></i><span>Administracion de inventario KANBAN</span></button>
+        <button onclick="loadContent('InventarioCero.html')"><i class="fas fa-ban"></i><span>Inventario Cero</span></button>
+    </div>
+  
+    <iframe id="contentFrame"></iframe>
+
+    <script>
+        function loadContent(url) {
+            document.getElementById('contentFrame').src = url;
+        }
+    </script>
+</body>
+</html>
