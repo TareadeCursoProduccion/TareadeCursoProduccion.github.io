@@ -7,24 +7,24 @@
     <link rel="stylesheet" href="CSS/LUCyLTC.css">
 </head>
 <body>
-    <h1 style="padding-left: 50px;">Calculadora LTC y LUC</h1>
+    <h1 style="padding-left: 50px;color: rgb(255, 255, 255);">Calculadora LTC y LUC</h1>
     <div id="calculator" style="margin-left: 37%;">
         <label for="costoS">Costo por Ordenar (S):</label>
-        <input style="width: 380px;" type="number" id="costoS" value="2.25" required><br><br>
+        <input style="width: 380px;" type="number" id="costoS" value="2.25" required min="0.01"><br><br>
 
         <label for="costoM">Costo de Mantenimiento (K):</label>
-        <input style="width: 380px;" type="number" id="costoM" value="0.02" required><br><br>
+        <input style="width: 380px;" type="number" id="costoM" value="0.02" required min="0.01"><br><br>
 
         <label for="tiempoEntrega">Tiempo de Entrega (LT):</label>
-        <input style="width: 380px;" type="number" id="tiempoEntrega" value="1" required><br><br>
+        <input style="width: 380px;" type="number" id="tiempoEntrega" value="1" required min="1"><br><br>
 
         <label for="semanas">Número de Semanas:</label>
-        <input style="width: 380px;" type="number" id="semanas" value="8" required><br><br>
-        <button onclick="generarTabla()">Calcular LTC y LUC</button>
+        <input style="width: 380px;" type="number" id="semanas" value="8" required min="1" max="20"><br><br>
+        <button  align="center" onclick="generarTabla()">Calcular LTC y LUC</button>
     </div>
 
-    <div id="tablaEntrada" style="display: none;margin-top: 30px;padding-left: 40px;"></div>
-    <div style="padding-left: 40px;border-radius:10px" id="resultados">
+    <div id="tablaEntrada" style="display: none;margin-top: 30px;padding-left: 40px;width: 90%;"></div>
+    <div style="padding-left: 40px;border-radius:10px;display: none;width: 90%;" id="resultados" >
         <!-- Aquí se mostrarán las tablas de LTC y LUC -->
     </div>
 

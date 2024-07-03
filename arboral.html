@@ -7,18 +7,18 @@
     <link rel="stylesheet" href="CSS/Arboral.css">
 </head>
 <body>
-    <h1>Diagrama Arboral de Productos y Componentes</h1>
+    <h1 style="color: rgb(255, 255, 255);">Diagrama Arboral</h1>
     <div class="form-section">
-        <h2>Agregar Producto Principal</h2>
+        <h2 id="productoPrincipalLabel">Agregar Producto Principal</h2>
         <form id="product-form">
-            <label for="product-name">Nombre del Producto:</label>
+            <label id="productNLabel" for="product-name">Nombre del Producto:</label>
             <input type="text" id="product-name" required>
-            <button type="submit">Agregar Producto</button>
+            <button id="addProductoButton" type="submit" style="margin-left: 20px;">Agregar Producto</button>
             <label for="product-units">Unidades del Producto:</label>
             <input type="number" id="product-units" required min="1">
         </form>
     </div>
-    <div class="form-section">
+    <div class="form-section" id="component-sections" style="display: none;" align="center">
         <h2>Agregar Componente</h2>
         <form id="component-form">
             <div id="parent-fields">
@@ -48,13 +48,22 @@
             <button type="submit">Agregar Componente</button>
         </form>
     </div>
-    <div class="form-section">
-        <h2>Calcular Resultados</h2>
-        <button id="test-button" type="button">Calcular Resultados</button>
+    <div class="form-section" id = "resultSecction" style="display: none;">
+       
+        <div id="diagram" class="mermaid" align="center"></div>
         <div id="resultsas"></div>
     </div>
-    <div id="diagram" class="mermaid"></div>
-    
+    <div class="form-section" id="calcularResultadoSection" style="display: none;">
+        <h2>Calcular Resultados</h2>
+        <button id="test-button" type="button">Calcular Resultados</button>
+    </div>
+    <div class="form-section" id="downloadSection" style="display: none;">
+        <button id="download-pdf" type="button">Descargar PDF</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
     <script type="module">
         import { calcularResultadoTodos } from './JS/Arboral.js';
 
@@ -66,6 +75,46 @@
                 alert('El multiplicador debe ser un número mayor que 0.');
             }
         });
+        document.getElementById('download-pdf').addEventListener('click', () => {
+    const diagram = document.getElementById('resultSecction');
+
+    // Guardar los estilos originales
+    const originalBackgroundColor = diagram.style.backgroundColor;
+    const originalBorderColor = diagram.style.borderColor;
+
+    // Establecer el nuevo color de fondo y bordes
+    diagram.style.backgroundColor = '#ffffff';
+    diagram.style.borderColor = '#ffffff'; // Cambia este color si prefieres un borde diferente
+
+    html2canvas(diagram).then(canvas => {
+        const imgData = canvas.toDataURL('image/png');
+        const { jsPDF } = window.jspdf;
+
+        // Restaurar los estilos originales
+        diagram.style.backgroundColor = originalBackgroundColor;
+        diagram.style.borderColor = originalBorderColor;
+
+        // Obtener las dimensiones del canvas
+        const canvasWidth = canvas.width;
+        const canvasHeight = canvas.height;
+
+        // Crear un nuevo documento PDF con las dimensiones del canvas
+        const pdf = new jsPDF({
+            orientation: canvasWidth > canvasHeight ? 'landscape' : 'portrait',
+            unit: 'px',
+            format: [canvasWidth, canvasHeight]
+        });
+
+        // Agregar la imagen al PDF
+        pdf.addImage(imgData, 'PNG', 0, 0, canvasWidth, canvasHeight);
+
+        // Guardar el PDF con el nombre 'diagrama.pdf'
+        pdf.save('diagrama.pdf');
+    });
+});
+
+
+
     </script>
 </body>
 </html>
