@@ -25,7 +25,6 @@ document.getElementById('maintenanceForm').addEventListener('submit', function(e
     let cicloRevision = parseFloat(document.getElementById('cicloRevision').value);
     let inventarioSeguridadPromedio = parseFloat(document.getElementById('inventarioSeguridadPromedio').value);
     
-  
     let costoBienesVendidos;
     let valorPromedioInventario;
     let rotacionInventario;
@@ -42,20 +41,37 @@ document.getElementById('maintenanceForm').addEventListener('submit', function(e
         rotacionInventario = costoBienesVendidos / valorPromedioInventario;
     }
     
-  
-    if(!isNaN(valorPromedioInventario))
-    {
-              
-     var square = document.getElementById('square');
-    square.innerHTML = "<p>Valor Promedio del Inventario: " + Math.round(valorPromedioInventario) + "</p>";
-    square.innerHTML += "<p>Costo de Bienes Vendidos: " + Math.round(costoBienesVendidos) + "</p>";
-    square.innerHTML += "<p>Rotación de Inventario: " + Math.round(rotacionInventario) + " Piezas</p>";
+    if (!isNaN(valorPromedioInventario)) {
+        var square = document.getElementById('square');
+        square.innerHTML = "<h2>Resultado</h2>";
+        square.innerHTML += "<p>Valor Promedio del Inventario: " + Math.round(valorPromedioInventario) + "</p>";
+        square.innerHTML += "<p>Costo de Bienes Vendidos: " + Math.round(costoBienesVendidos) + "</p>";
+        square.innerHTML += "<p>Rotación de Inventario: " + Math.round(rotacionInventario) + " Piezas</p>";
 
-        square.style.display = 'block'; 
+        // Mostrar la fórmula utilizada
+        let formulaHtml = `<h3>Fórmulas Utilizadas</h3>`;
+        if (cppOption === 'cppFijoDiv') {
+            formulaHtml += `<p>Valor Promedio del Inventario = (Q / 2) + SS</p>`;
+            formulaHtml += `<p>Costo de Bienes Vendidos = Demanda Anual</p>`;
+            formulaHtml += `<p>Rotación de Inventario = Costo de Bienes Vendidos / Valor Promedio del Inventario</p>`;
+        } else {
+            formulaHtml += `<p>Valor Promedio del Inventario = (d * T / 2) + SS</p>`;
+            formulaHtml += `<p>Costo de Bienes Vendidos = Demanda Semanal * 52</p>`;
+            formulaHtml += `<p>Rotación de Inventario = Costo de Bienes Vendidos / Valor Promedio del Inventario</p>`;
+        }
+
+        formulaHtml += `<h3>Valores Utilizados</h3>`;
+        if (cppOption === 'cppFijoDiv') {
+            formulaHtml += `<p>Demanda Anual (D): ${demandaAnual}</p>`;
+            formulaHtml += `<p>Cantidad Perdida (Q): ${cantidadPerdida}</p>`;
+            formulaHtml += `<p>Inventario de Seguridad (SS): ${inventarioSeguridadFijo}</p>`;
+        } else {
+            formulaHtml += `<p>Demanda Semanal (d): ${demandaSemanal}</p>`;
+            formulaHtml += `<p>Ciclo de Revisión (T): ${cicloRevision}</p>`;
+            formulaHtml += `<p>Inventario de Seguridad (SS): ${inventarioSeguridadPromedio}</p>`;
+        }
+
+        square.innerHTML += formulaHtml;
+        square.style.display = 'block';
     }
-    else
-    {
-  
-    }
-    
 });
