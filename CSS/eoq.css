@@ -9,12 +9,14 @@ body {
     margin: 0;
     background: linear-gradient(to bottom, #004C57, #0F1F36);
 }
+
 form {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 label {
     display: block;
     margin-bottom: 5px;
@@ -22,6 +24,7 @@ label {
     margin-left: -140px;
     font-weight: 600;
 }
+
 #square {
     background-color: #fffffff0;
     border-radius: 10px;
@@ -34,6 +37,7 @@ label {
     backdrop-filter: blur(5px); /* Agregar desenfoque */
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Agregar sombra */
 }
+
 input[type="number"] {
     width: 300px;
     padding: 5px;
@@ -47,6 +51,7 @@ input[type="number"] {
     border-radius: 5px;
     border-bottom: 1px solid #ccc;
 }
+
 button {
     background-color: #D9D9D9;
     color: rgb(0, 0, 0);
@@ -60,6 +65,7 @@ button {
     border-color: #000000;
     backdrop-filter: blur();
 }
+
 button:hover {
     background-color: #00000090;
     color: rgb(255, 255, 255);
@@ -72,7 +78,8 @@ button:hover {
     border-color: #000000;
     backdrop-filter: blur();
 }
-#result {
+
+#resultContainer {
     margin-top: 20px;
     background-color: #ffffff;
     border-radius: 10px;
@@ -81,10 +88,12 @@ button:hover {
     backdrop-filter: blur(5px);
     display: none;
 }
+
 #demand {
     margin-left: 20px;
     margin-right: 20px;
 }
+
 @media screen and (max-width: 600px) {
     /* Estilos para dispositivos móviles con un ancho máximo de 600px */
     #square {
@@ -92,4 +101,9 @@ button:hover {
         margin-right: 0; /* Eliminar el margen derecho */
         box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Agregar sombra */
     }
+}
+
+.formula {
+    font-family: monospace;
+    color: #333;
 }

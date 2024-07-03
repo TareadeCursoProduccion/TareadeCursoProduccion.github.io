@@ -1,65 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Mantenimiento Correctivo</title>
+    <title>Calculadora de Control de Inventario</title>
     <link rel="stylesheet" href="CSS/ControlInventario.css">
 </head>
 <body>
-
     <div id="square1">
-    <h1>Calculadora de Control de inventario y cadena de suministros</h1>
-    
-    <form id="maintenanceForm">
-        
-        <div>
-            <select id="cppOption" onchange="toggleMTBFInput()">
-                <option value="cppFijoDiv">Costo Promedio por Pieza Costo Fijo</option>
-                <option value="cppPromedioDiv">Costo Promedio por Pieza Costo Promedio</option>
-            </select>
-        </div>
-
-        <div id="cppFijoDiv">
-
+        <h1>Calculadora de Control de inventario y cadena de suministros</h1>
+        <form id="maintenanceForm">
             <div>
-                <span>Demanda Anual (D):</span>
-                <input type="number" class="" id="demandaAnual" min="1">
+                <select id="cppOption" onchange="toggleMTBFInput()">
+                    <option value="cppFijoDiv">Costo Promedio por Pieza Costo Fijo</option>
+                    <option value="cppPromedioDiv">Costo Promedio por Pieza Costo Promedio</option>
+                </select>
             </div>
-
-            <div>
-                <span>Cantidad Perdida (Q):</span>
-                <input type="number" class="" id="cantidadPerdida" min="1">
+            <div id="cppFijoDiv">
+                <div>
+                    <span>Demanda Anual (D):</span>
+                    <input type="number" class="" id="demandaAnual" min="1">
+                </div>
+                <div>
+                    <span>Cantidad Perdida (Q):</span>
+                    <input type="number" class="" id="cantidadPerdida" min="1">
+                </div>
+                <div>
+                    <span>Inventario de Seguridad (SS):</span>
+                    <input type="number" class="" id="inventarioSeguridadFijo" min="1">
+                </div>
             </div>
-
-             <div>
-                <span>Inventario de Seguridad (SS):</span>
-                <input type="number" class="" id="inventarioSeguridadFijo" min="1">
+            <div id="cppPromedioDiv" style="display: none;">
+                <div>
+                    <span>Demanda Semanal (d):</span>
+                    <input type="number" class="" id="demandaSemanal" min="1">
+                </div>
+                <div>
+                    <span>Ciclo de Revisión (T):</span>
+                    <input type="number" class="" id="cicloRevision" min="1">
+                </div>
+                <div>
+                    <span>Inventario de Seguridad (SS):</span>
+                    <input type="number" class="" id="inventarioSeguridadPromedio" min="1">
+                </div>
             </div>
-        </div>
-
-        <div id="cppPromedioDiv" style="display: none;">
-            
-            <div>
-                <span>Demanda Semanal (d):</span>
-                <input type="number" class="" id="demandaSemanal" min="1">
-            </div>
-
-            <div>
-                <span>Ciclo de Revision (T):</span>
-                <input type="number" class="" id="cicloRevision" min="1">
-            </div>
-
-             <div>
-                <span>Inventario de Seguridad (SS):</span>
-                <input type="number" class="" id="inventarioSeguridadPromedio" min="1">
-            </div>
-        </div>
-
-        <button type="submit">Calcular</button>
-    </form>
-</div>
+            <button type="submit">Calcular</button>
+        </form>
+    </div>
     <div id="square"></div>
-    <script src = JS/ControlInventario.js></script>
+    <script src="JS/ControlInventario.js"></script>
 </body>
 </html>

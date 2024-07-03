@@ -114,3 +114,8 @@ button:hover {
         width: calc(100% - 20px); /* Ancho completo para dispositivos móviles */
     }
 }
+
+.formula {
+    font-family: monospace;
+    color: #333;
+}
