@@ -1,5 +1,4 @@
-   
- body {
+body {
     font-family: Arial, sans-serif;
     text-align: center;
     display: flex;
@@ -8,7 +7,6 @@
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background: linear-gradient(to bottom, #004C57, #0F1F36);
 }
 
 h1 {
@@ -21,7 +19,8 @@ h1 {
 form {
     margin-top: 20px;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
 }
 
@@ -32,45 +31,22 @@ label {
 
 input[type="number"],
 select {
-    width: 300px;
-    padding: 5px;
+    width: calc(50% - 20px); /* Ancho ajustado para ocupar casi la mitad del contenedor */
+    padding: 8px;
     margin-bottom: 10px;
+    background-color: #D9D9D9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-#mtbfOption {
-    background-color: #ffffffae;
-    border: 15px;
-    border-color: rgb(255, 255, 255);
-  
-    text-align: center;
-    
-    width: 300px; /* Ancho aumentado a 300px */
-
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    border-bottom: 1px solid #ccc; /* Agregar borde inferior */
-}
-
-input {
-    background-color: #ffffffae;
-    border: 15px;
-    border-color: rgb(255, 255, 255);
-  
-    text-align: center;
-    
-    width: 300px; /* Ancho aumentado a 300px */
-    padding: 10px; /* Ajuste del relleno para que se vea bien */
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    border-bottom: 1px solid #ccc; /* Agregar borde inferior */
+input[type="number"]:nth-child(3),
+select:nth-child(3) {
+    width: calc(100% - 20px); /* Ancho completo para la tercera fila */
 }
 
 button {
     background-color: #ffffff90;
- 
-    color: rgb(0, 0, 0);
+    color: #000;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -79,42 +55,31 @@ button {
     margin-bottom: 10px;
     margin-left: 20px;
     margin-right: 20px;
+    border: 1px solid #000;
     border-radius: 5px;
-    border-color: #000000;
-    backdrop-filter: blur();
 }
 
 button:hover {
     background-color: #00000090;
- 
- color: rgb(255, 255, 255);
- padding: 10px 20px;
- text-align: center;
- text-decoration: none;
- font-size: 16px;
- cursor: pointer;
- 
- border-radius: 5px;
- border-color: #000000;
- backdrop-filter: blur();
+    color: #fff;
 }
 
 #square {
-    background-color: #ffffff56;
+    background-color: #ffffff;
     border-radius: 10px;
     padding: 10px;
     margin-right: 20px;
-    width: 200;
+    width: 80%;
+    max-width: 600px; /* Limitar el ancho máximo */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     backdrop-filter: blur(5px); /* Agregar desenfoque */
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Agregar sombra */
-
 }
 
 #resultContainer {
-    background-color: #ffffff56;
+    background-color: #ffffff;
     border-radius: 10px;
     padding: 10px;
     margin-top: 20px;
@@ -128,8 +93,7 @@ button:hover {
 }
 
 #mtbfPercentageDiv {
-    display: none;
-    /* Ocultar inicialmente */
+    display: none; /* Ocultar inicialmente */
 }
 
 #mtbfOptionDiv {
@@ -137,15 +101,16 @@ button:hover {
     justify-content: center;
     align-items: center;
 }
-#CostoFallaUnica
-{
-    margin-bottom: 40px;
-}
+
 @media screen and (max-width: 600px) {
-  /* Estilos para dispositivos móviles con un ancho máximo de 600px */
-  #square {
-    width: 350px;
-    margin-right: 0; /* Eliminar el margen derecho */
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Agregar sombra */
-  }
+    /* Estilos para dispositivos móviles con un ancho máximo de 600px */
+    #square {
+        width: 90%; /* Ajustar el ancho para dispositivos móviles */
+        margin-right: 0; /* Eliminar el margen derecho */
+    }
+    
+    input[type="number"],
+    select {
+        width: calc(100% - 20px); /* Ancho completo para dispositivos móviles */
+    }
 }
