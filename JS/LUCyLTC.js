@@ -1,4 +1,19 @@
 function generarTabla() {
+
+    var costoS = parseFloat(document.getElementById("costoS").value);
+    var costoM = parseFloat(document.getElementById("costoM").value);
+    var tiempoEntrega = parseInt(document.getElementById("tiempoEntrega").value);
+    var semanas2 = parseInt(document.getElementById("semanas").value);
+
+    var costoS_min = parseFloat(document.getElementById("costoS").getAttribute("min"));
+    var costoM_min = parseFloat(document.getElementById("costoM").getAttribute("min"));
+    var tiempoEntrega_min = parseInt(document.getElementById("tiempoEntrega").getAttribute("min"));
+    var semanas_min = parseInt(document.getElementById("semanas").getAttribute("min"));
+    var semanas_max = parseInt(document.getElementById("semanas").getAttribute("max"));
+    if (costoS < costoS_min || costoM < costoM_min || tiempoEntrega < tiempoEntrega_min || semanas2 < semanas_min  || semanas2 > semanas_max) {
+        alert("Los valores no pueden ser menores que los mínimos especificados.");
+        return;
+    }
     let semanas = parseInt(document.getElementById('semanas').value);
     let tablaEntrada = document.getElementById('tablaEntrada');
 
@@ -13,7 +28,7 @@ function generarTabla() {
     }
     html += '</tr><tr>';
     for (let i = 1; i <= semanas; i++) {
-        html += `<td><input style = "width: 100px" type="number" id="semana${i}" required></td>`;
+        html += `<td><input style = "width: 100px" type="number" id="semana${i}" required min="1"></td>`;
     }
     html += '</tr></table>';
     html += '<div class="center"><button type="button" style="width: 100px;" onclick="calcular()">Calcular</button></div>';
@@ -29,17 +44,23 @@ function calcular() {
 
     let valoresPorSemana = [];
     let camposCompletos = true;
+    let valoresInvalidos = false;
 
     for (let i = 1; i <= semanas; i++) {
-        let valor = document.getElementById(`semana${i}`).value;
-        if (valor === "") {
-            camposCompletos = false;
+        let valor = parseFloat(document.getElementById(`semana${i}`).value);
+        
+        // Validar que el valor sea mayor que 0
+        if (valor <= 0 || isNaN(valor)) {
+            valoresInvalidos = true;
             break;
         }
-        valoresPorSemana.push(parseFloat(valor));
+
+        valoresPorSemana.push(valor);
     }
 
-    if (camposCompletos) {
+    if (valoresInvalidos) {
+        alert("¡Los valores deben ser mayores que 0! Por favor, verifica los campos e inténtalo de nuevo.");
+    } else if (camposCompletos) {
         let LUCs = calcularLUC(S, K, LT, valoresPorSemana);
         let LTCs = calcularLTC(S, K, valoresPorSemana);
 
@@ -48,6 +69,7 @@ function calcular() {
         alert("¡Tienes campos vacíos! Por favor, completa todos los campos e inténtalo de nuevo.");
     }
 }
+
 
 function calcularLUC(S, K, LT, Values) {
     let LUCs = [];
@@ -127,15 +149,15 @@ function agregarRequerimiento() {
 function mostrarResultados(LUCs, LTCs) {
     let resultadosDiv = document.getElementById('resultados');
     resultadosDiv.innerHTML = '';
-
+      resultadosDiv.style.display ='block';
       // Mostrar tabla de LTC
-      let ltcTable = '<h2>Método LTC</h2><table border="1"><tr><th>Período</th><th>Unidades</th><th>Periodos Mantenidos</th><th>Costo de Mantenimiento</th><th>Costo de Mantenimiento Acumulado</th></tr>';
+      let ltcTable = '<h2 align="center">Método LTC</h2><table border="1"><tr><th>Período</th><th>Unidades</th><th>Periodos Mantenidos</th><th>Costo de Mantenimiento</th><th>Costo de Mantenimiento Acumulado</th></tr>';
       LTCs.forEach(ltc => {
             ltcTable += `<tr style="background-color: ${ltc.Delete ? 'red' : '#f2f2f2'};"><td>${ltc.Period}</td><td>${ltc.Units}</td><td>${ltc.MaintainedPeriod}</td><td>${ltc.MaintenanceCost.toFixed(2)}</td><td>${ltc.CumulativeMaintenanceCost.toFixed(2)}</td></tr>`;
         });
         ltcTable += '</table>';
 
-      let lucTable = '<h2>Método LUC</h2><table border="1" style = "border-radius:20px"><tr><th>Período</th><th>Unidades</th><th>S</th><th>K</th><th>Costo Total</th><th>Costo Unitario</th></tr>';
+      let lucTable = '<h2 align="center">Método LUC</h2><table border="1" style = "border-radius:20px"><tr><th>Período</th><th>Unidades</th><th>S</th><th>K</th><th>Costo Total</th><th>Costo Unitario</th></tr>';
 
       let accumulatedUnits = ''; // Variable para acumular UnitString
       let accumulatedPeriods = ''; // Variable para acumular PeriodString

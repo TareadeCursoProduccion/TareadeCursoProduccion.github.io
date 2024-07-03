@@ -25,7 +25,14 @@ productForm.addEventListener('submit', (event) => {
         updateExistingComponentSelect();
         updateMermaidCode();
         renderMermaidDiagram();
+       
     }
+    document.getElementById('productoPrincipalLabel').style.display = 'none';
+    document.getElementById('product-name').style.display = 'none';
+    document.getElementById('addProductoButton').style.display = 'none';
+    document.getElementById('productNLabel').style.display = 'none';
+    document.getElementById('component-sections').style.display = 'block';
+  
 });
 
 componentForm.addEventListener('submit', (event) => {
@@ -41,7 +48,9 @@ componentForm.addEventListener('submit', (event) => {
             parents.push({ parent: parentName, units });
         }
     }
-
+    document.getElementById('resultSecction').style.display = 'block';
+    document.getElementById('calcularResultadoSection').style.display = 'block';
+    document.getElementById('downloadSection').style.display = 'block';
     if (selectedOption === 'new' && componentName && parents.length) {
         // Verificar si el componente ya existe
         const existingComponent = components.find(c => c.name === componentName);
