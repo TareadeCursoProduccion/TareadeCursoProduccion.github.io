@@ -1,70 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculadora de Mantenimiento Correctivo</title>
-    <link rel="stylesheet" href="CSS/CMCorrectivo.css">
-</head>
-<body>
+    <link rel="stylesheet" href="CSS/CMCorrectivo.css" />
+  </head>
+  <body>
     <form id="maintenanceForm">
-        <div id="square">
-            <h1>Calculadora de Mantenimiento Correctivo</h1>
+      <div id="square">
+        <h1>Calculadora de Mantenimiento Correctivo</h1>
         <div>
-            <label for="hora">Horas de Funcionamiento (H):</label>
-            <input type="number" id="hora" required>
+          <label for="hora">Horas de Funcionamiento (H):</label>
+          <input type="number" id="hora" required min="1" />
         </div>
         <div id="mtbfValueDiv">
-            <label for="mtbf">MTBF:</label>
-            <input type="number" id="mtbf" name="mtbf" required>
+          <label for="mtbf">MTBF:</label>
+          <input type="number" id="mtbf" name="mtbf" required min="1" />
         </div>
         <div id="mtbfPercentageDiv">
-            <label for="mtbfPercentageValue">MTBF (% de las horas):</label>
-            <input type="number" id="mtbfPercentageValue" name="mtbfPercentageValue">
+          <label for="mtbfPercentageValue">MTBF (% de las horas):</label>
+          <input
+            type="number"
+            id="mtbfPercentageValue"
+            name="mtbfPercentageValue"
+            min="0"
+            max="100"
+          />
         </div>
         <div id="mtbfOptionDiv">
-            <select id="mtbfOption" onchange="toggleMTBFInput()">
-                <option value="value">MTBF (en horas)</option>
-                <option value="percentage">MTBF (% de las horas)</option>
-            </select>
+          <select id="mtbfOption" onchange="toggleMTBFInput()">
+            <option value="value">MTBF (en horas)</option>
+            <option value="percentage">MTBF (% de las horas)</option>
+          </select>
         </div>
         <div>
-            <label for="duracionTareas">Duración de las Tareas (en horas):</label>
-            <input type="number" id="duracionTareas" required>
+          <label for="duracionTareas">Duración de las Tareas (en horas):</label>
+          <input type="number" id="duracionTareas" required min="1" />
         </div>
         <div>
-            <label for="costoHora">Costo por Hora de Trabajo:</label>
-            <input type="number" id="costoHora" required>
+          <label for="costoHora">Costo por Hora de Trabajo:</label>
+          <input type="number" id="costoHora" required min="1" />
         </div>
         <div>
-            <label for="repuestos">Repuestos:</label>
-            <input type="number" id="repuestos" required>
+          <label for="repuestos">Repuestos:</label>
+          <input type="number" id="repuestos" required min="1" />
         </div>
         <div>
-            <label for="costoTareasOperacionales">Costos de Tareas Operacionales:</label>
-            <input type="number" id="costoTareasOperacionales" required>
+          <label for="costoTareasOperacionales"
+            >Costos de Tareas Operacionales:</label
+          >
+          <input type="number" id="costoTareasOperacionales" required min="1" />
         </div>
         <div>
-            <label for="retrasoLogistico">Retraso Logístico:</label>
-            <input type="number" id="retrasoLogistico" required>
+          <label for="retrasoLogistico">Retraso Logístico:</label>
+          <input type="number" id="retrasoLogistico" required min="0" />
         </div>
         <div>
-            <label for="CostoParada">Costo Unitario por Parada:</label>
-            <input type="number" id="CostoParada" required>
+          <label for="CostoParada">Costo Unitario por Parada:</label>
+          <input type="number" id="CostoParada" required min="1" />
         </div>
         <div>
-            <label for="CostoFallaUnica">Costo de Fallas de Vez Única:</label>
-            <input type="number" id="CostoFallaUnica" required>
+          <label for="CostoFallaUnica">Costo de Fallas de Vez Única:</label>
+          <input type="number" id="CostoFallaUnica" required min="1" />
         </div>
-        
+
         <button type="submit">Calcular</button>
-    </div>
+      </div>
     </form>
-    
+
     <div id="resultContainer">
-        <div id="result"></div>
+      <div id="result"></div>
     </div>
-    <script src=JS/CMCorrectivo.js></script>
-  
-</body>
+
+    <script src="JS/CMCorrectivo.js"></script>
+  </body>
 </html>

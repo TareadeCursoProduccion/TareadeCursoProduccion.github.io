@@ -12,27 +12,27 @@
     <form id="initial-form">
       <div class="field">
         <label for="PPT">Producción por trabajador (unidades por día):</label>
-        <input type="number" id="PPT" name="PPT" step="any" required>
+        <input type="number" id="PPT" name="PPT" step="any" min="1" required>
       </div>
       <div class="field">
         <label for="CDTH">Costo de trabajador por hora:</label>
-        <input type="number" id="CDTH" name="CDTH" step="any" required>
+        <input type="number" id="CDTH" name="CDTH" step="any" min="1" required>
       </div>
       <div class="field">
         <label for="OAI">Operarios actuales iniciales:</label>
-        <input type="number" id="OAI" name="OAI" step="any" required>
+        <input type="number" id="OAI" name="OAI" step="any" min="1" required>
       </div>
       <div class="field">
         <label for="CDT">Costo de despido por trabajador:</label>
-        <input type="number" id="CDT" name="CDT" step="any" required>
+        <input type="number" id="CDT" name="CDT" step="any" min="1" required>
       </div>
       <div class="field">
         <label for="CCT">Costo de contratación por trabajador:</label>
-        <input type="number" id="CCT" name="CCT" step="any" required>
+        <input type="number" id="CCT" name="CCT" step="any" min="1" required>
       </div>
       <div class="field">
         <label for="MESES">Número de meses:</label>
-        <input type="number" id="MESES" name="MESES" step="any" required>
+        <input type="number" id="MESES" name="MESES" step="any" min="1" required>
       </div>
       <button type="submit">Siguiente</button>
     </form>
