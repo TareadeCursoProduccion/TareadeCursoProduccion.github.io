@@ -36,25 +36,41 @@ input[type="number"] {
 }
 
 button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    background-color: #D9D9D9;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
     font-size: 16px;
-}
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #00000090;
+    color: rgb(255, 255, 255);
+  }
 
-button:hover {
-    background-color: #0056b3;
-}
 
 #resultados {
     margin-top: 20px;
 }
 
+#tablaEntrada {
+    margin: 20px auto;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
+#resultados {
+    margin: 20px auto;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 table {
     border-collapse: separate; /* Cambiado de collapse a separate para que border-radius funcione */
     width: 100%;
