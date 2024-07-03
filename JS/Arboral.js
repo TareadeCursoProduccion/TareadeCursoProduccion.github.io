@@ -192,7 +192,7 @@ export function calcularResultadoTodos(multiplier) {
     });
 
     const average = totalSum / results.length;
-    resultsText += `\nPromedio de los resultados: ${average}`;
+    resultsText += `\nPromedio de los resultados: ${average.toFixed(2)}`;
 
     const resultsDiv = document.getElementById('resultsas');
     if (resultsDiv) {
