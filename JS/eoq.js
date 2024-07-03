@@ -3,6 +3,11 @@ function calculateEOQ() {
     var orderCost = parseFloat(document.getElementById("orderCost").value);
     var holdingCost = parseFloat(document.getElementById("holdingCost").value);
 
+        if (demand <= 0 || orderCost <= 0 || holdingCost <= 0) {
+            alert("Por favor, ingrese valores mayores a 0.");
+            return false;
+        }
+
     // Verificar si los campos están completos
     if (isNaN(demand) || isNaN(orderCost) || isNaN(holdingCost)) {
         alert("Por favor, complete todos los campos.");

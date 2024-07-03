@@ -26,10 +26,10 @@ class KANBAN {
   
       row.innerHTML = `
         <td>Componente ${i + 1}</td>
-        <td><input type="number" name="Demanda${i}" min="0" required></td>
-        <td><input type="number" name="TiempoEntrega${i}" min="0" required></td>
-        <td><input type="number" name="StockSeguridad${i}" min="0" max="1" step="0.01" required></td>
-        <td><input type="number" name="Almacenaje${i}" min="0" max="1" step="0.01" required></td>
+        <td><input type="number" name="Demanda${i}" min="1" required></td>
+        <td><input type="number" name="TiempoEntrega${i}" min="1" required></td>
+        <td><input type="number" name="StockSeguridad${i}" min="1" max="1" step="0.01" required></td>
+        <td><input type="number" name="Almacenaje${i}" min="1" max="1" step="0.01" required></td>
       `;
   
       kanbanTableBody.appendChild(row);

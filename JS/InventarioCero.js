@@ -76,11 +76,11 @@ document.addEventListener("DOMContentLoaded", () => {
       monthlyInputsHtml += `
         <div class="form-group">
           <label for="Labores${i}">Días laborados Mes ${i + 1}</label>
-          <input type="number" id="Labores${i}" name="Labores${i}" required>
+          <input type="number" id="Labores${i}" name="Labores${i}" min="1" required>
         </div>
         <div class="form-group">
           <label for="Demanda${i}">Demanda Mes ${i + 1}</label>
-          <input type="number" id="Demanda${i}" name="Demanda${i}" required>
+          <input type="number" id="Demanda${i}" name="Demanda${i}" min="1" required>
         </div>
       `;
     }
